@@ -1,6 +1,6 @@
 schema: 1
-coverage: pending
-reviewed_manuscript_sha256: null
+coverage: reviewed
+reviewed_manuscript_sha256: eb4a59aa181ed2282b2172b47d807d4f76bff26818187d1c9170f45617ba4720
 claims:
 - id: abs-exhaustive-pairs
   kind: computation
@@ -26,30 +26,6 @@ claims:
     decimals: 0
     units: trials
     conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
-- id: abs-greedy-perm-n6
-  kind: computation
-  passage: 'Moves that depend on the state remove this rigidity at small sizes: every $3\times 3$ matrix over $\mathbb{F}_5$ with nonzero permanent can reach a readable form, while greedy agents with access to every permanent-preserving move complete 94 of 200 random $6\times 6$ matrices over $\mathbb{F}_3$.'
-  evidence:
-    file: simulation/output/results.json
-    run_id: main
-    pointer: /greedy/perm_n6_p3/completed
-    reported: '94'
-    scale: 1
-    decimals: 0
-    units: matrices completed
-    conditions: greedy oracle agents, permanent, n=6, p=3, complete graph, budget 3000 contacts
-- id: abs-greedy-trials-n6
-  kind: computation
-  passage: 'Moves that depend on the state remove this rigidity at small sizes: every $3\times 3$ matrix over $\mathbb{F}_5$ with nonzero permanent can reach a readable form, while greedy agents with access to every permanent-preserving move complete 94 of 200 random $6\times 6$ matrices over $\mathbb{F}_3$.'
-  evidence:
-    file: simulation/output/results.json
-    run_id: main
-    pointer: /greedy/perm_n6_p3/trials
-    reported: '200'
-    scale: 1
-    decimals: 0
-    units: random matrices with nonzero permanent
-    conditions: greedy oracle agents, n=6, p=3
 - id: exh-pairs
   kind: computation
   passage: Across 1,381,440 matrix-graph pairs and 4,007,520 nontrivial transitions there were no disagreements with Theorems 1 to 3, no change of determinant, no change of any component's pivot profile, and no error in the readout from summaries.
@@ -410,90 +386,234 @@ claims:
     decimals: 0
     units: matrices
     conditions: seed 7
-- id: greedy-det
+- id: greedy-det-n3
   kind: computation
-  passage: For the determinant this reproduces elimination, and these agents completed all 200 random matrices in every setting tested.
+  passage: For the determinant this rule reproduces elimination, and the agents completed 200 of 200 matrices in each of the five settings.
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/det_n6_p3/completed
+    pointer: /greedy_paired/n3_p5/det/completed
     reported: '200'
     scale: 1
     decimals: 0
     units: matrices completed
-    conditions: greedy oracle agents, determinant, every tested (n,p); n=6, p=3 shown
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, det, n=3, p=5
+- id: greedy-det-n6
+  kind: computation
+  passage: For the determinant this rule reproduces elimination, and the agents completed 200 of 200 matrices in each of the five settings.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy_paired/n6_p3/det/completed
+    reported: '200'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, det, n=6, p=3
 - id: greedy-perm-n3
   kind: computation
-  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/perm_n3_p5/completed
+    pointer: /greedy_paired/n3_p5/perm/completed
     reported: '200'
     scale: 1
     decimals: 0
     units: matrices completed
-    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=3, p=5
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, perm, n=3, p=5
 - id: greedy-perm-n4
   kind: computation
-  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/perm_n4_p5/completed
+    pointer: /greedy_paired/n4_p5/perm/completed
     reported: '200'
     scale: 1
     decimals: 0
     units: matrices completed
-    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=4, p=5
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, perm, n=4, p=5
 - id: greedy-perm-n5p5
   kind: computation
-  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/perm_n5_p5/completed
-    reported: '118'
+    pointer: /greedy_paired/n5_p5/perm/completed
+    reported: '105'
     scale: 1
     decimals: 0
     units: matrices completed
-    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=5, p=5
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, perm, n=5, p=5
 - id: greedy-perm-n5p3
   kind: computation
-  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/perm_n5_p3/completed
-    reported: '162'
+    pointer: /greedy_paired/n5_p3/perm/completed
+    reported: '164'
     scale: 1
     decimals: 0
     units: matrices completed
-    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=5, p=3
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, perm, n=5, p=3
 - id: greedy-perm-n6p3
   kind: computation
-  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/perm_n6_p3/completed
-    reported: '94'
+    pointer: /greedy_paired/n6_p3/perm/completed
+    reported: '87'
     scale: 1
     decimals: 0
     units: matrices completed
-    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=6, p=3
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials, perm, n=6, p=3
 - id: greedy-budget
   kind: computation
-  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
   evidence:
     file: simulation/output/results.json
     run_id: main
-    pointer: /greedy/perm_n6_p3/budget
+    pointer: /greedy_paired/n6_p3/budget
     reported: 3,000
     scale: 1
     decimals: 0
     units: contacts
-    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials
+- id: greedy-trials
+  kind: computation
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy_paired/n6_p3/trials
+    reported: '200'
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: greedy oracle agents, complete graph, budget 3000 contacts, the same 200 random matrices with det != 0 and perm != 0 and the same contact schedule for both polynomials
+- id: cert-n5p5
+  kind: computation
+  passage: 'The exhaustive census found no certified pair that is not frozen: at $n=5$ over $\mathbb{F}_5$, 6,266,880 of the 6,328,320 frozen pairs are certified, and at $n=6$ over $\mathbb{F}_3$, 337,920 of 407,040.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/exhaustive_n5_p5/certified
+    reported: 6,266,880
+    scale: 1
+    decimals: 0
+    units: certified pairs
+    conditions: exhaustive over all pairs; certificate of Theorem 6, n=5, p=5
+- id: cert-n5p5-frozen
+  kind: computation
+  passage: 'The exhaustive census found no certified pair that is not frozen: at $n=5$ over $\mathbb{F}_5$, 6,266,880 of the 6,328,320 frozen pairs are certified, and at $n=6$ over $\mathbb{F}_3$, 337,920 of 407,040.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/exhaustive_n5_p5/frozen
+    reported: 6,328,320
+    scale: 1
+    decimals: 0
+    units: frozen independent pairs
+    conditions: exhaustive over all pairs; certificate of Theorem 6, n=5, p=5
+- id: cert-n6p3
+  kind: computation
+  passage: 'The exhaustive census found no certified pair that is not frozen: at $n=5$ over $\mathbb{F}_5$, 6,266,880 of the 6,328,320 frozen pairs are certified, and at $n=6$ over $\mathbb{F}_3$, 337,920 of 407,040.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/exhaustive_n6_p3/certified
+    reported: 337,920
+    scale: 1
+    decimals: 0
+    units: certified pairs
+    conditions: exhaustive over all pairs; certificate of Theorem 6, n=6, p=3
+- id: cert-n6p3-frozen
+  kind: computation
+  passage: 'The exhaustive census found no certified pair that is not frozen: at $n=5$ over $\mathbb{F}_5$, 6,266,880 of the 6,328,320 frozen pairs are certified, and at $n=6$ over $\mathbb{F}_3$, 337,920 of 407,040.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/exhaustive_n6_p3/frozen
+    reported: 407,040
+    scale: 1
+    decimals: 0
+    units: frozen independent pairs
+    conditions: exhaustive over all pairs; certificate of Theorem 6, n=6, p=3
+- id: cert-sampled
+  kind: computation
+  passage: In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/sampled_n5_p101/certified
+    reported: 199,689
+    scale: 1
+    decimals: 0
+    units: certified pairs
+    conditions: seeded uniform pairs, n=5, p=101, seed 3
+- id: cert-sampled-n
+  kind: computation
+  passage: In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/sampled_n5_p101/samples
+    reported: 200,000
+    scale: 1
+    decimals: 0
+    units: pairs
+    conditions: seed 3
+- id: cert-bound
+  kind: computation
+  passage: In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/sampled_n5_p101/bound_share
+    reported: 80%
+    scale: 100
+    decimals: 0
+    units: percent of pairs guaranteed certified
+    conditions: 1 - 4n/p with n=5, p=101
+- id: cert-matrices
+  kind: computation
+  passage: In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/sampled_n5_p1009/matrices_all_pairs_certified
+    reported: 19,998
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: seeded uniform 5x5 matrices over F_1009, seed 5
+- id: cert-matrices-n
+  kind: computation
+  passage: In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/sampled_n5_p1009/matrices
+    reported: 20,000
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: seed 5
+- id: cert-diag
+  kind: computation
+  passage: On 10,000 certified coordinates the diagonal recovery formula reproduced $2x_iy_i$ with no errors.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /certificate/sampled_n5_p101/diagonal_checks
+    reported: 10,000
+    scale: 1
+    decimals: 0
+    units: coordinate checks
+    conditions: first 2,000 certified sampled pairs, n=5, p=101
 - id: sign-det
   kind: computation
   passage: For $n=3,\dots,7$ the admissible sets of the computation were exactly the cuts; at $n=7$, 64 of the 2,097,152 rules give a signed determinant and another 64 a signed permanent.
@@ -582,14 +702,14 @@ claims:
   kind: interpretation
   passage: At $n=3$ the permanent's local rigidity is therefore a property of fixed linear moves and disappears once moves may depend on the state.
   rationale: Exhaustive n=3 reachability shows state-dependent permanent-preserving moves connect every matrix of each nonzero permanent value.
-- id: interp-dimension
-  kind: assumption
-  passage: A dimension count suggests that frozen pairs become generic for $n\ge 5$ over large fields, because the $n(n-1)/2$ constraints on the $2n$ coordinates of the replacement then outnumber the free parameters left after the one-dimensional torus; this was not proved.
-  rationale: Heuristic parameter count; explicitly not proved.
 - id: prop-sign
   kind: interpretation
-  passage: '**Proposition 6.** $D_E$ equals the determinant after a change of signs of matrix entries (and a global sign) if and only if $E$ is a cut of the complete graph, $E=\{\{i,j\}: i\in S,\ j\notin S\}$ for some $S$.'
+  passage: '**Proposition 7.** $D_E$ equals the determinant after a change of signs of matrix entries (and a global sign) if and only if $E$ is a cut of the complete graph, $E=\{\{i,j\}: i\in S,\ j\notin S\}$ for some $S$.'
   rationale: Proved in the text; GF(2) census confirms it for n from 3 to 7.
+- id: thm-rigidity
+  kind: interpretation
+  passage: '**Theorem 6 (rank-two rigidity).** Let $\operatorname{char}\mathbb{F}\neq 2$ and $n\ge 5$.'
+  rationale: Proved in the text by a Schur-complement argument adapted from Anderson and Rubin, with a Schwartz-type bound; certificate soundness checked exhaustively.
 - id: interp-free-lunch
   kind: interpretation
   passage: In that sense the determinant's local capacity is a consequence of its symmetry group, and the permanent lacks the corresponding local moves.
@@ -609,8 +729,8 @@ claims:
     citation_id: zhang2024
     locator: Abstract
     depth: abstract
-    verified: false
-    verification_note: Read the version-of-record abstract (OpenAlex record for DOI 10.1177/10597123241269740) and the arXiv preprint 2401.05375v1 (Definitions of Terms table; Error tolerance and Delayed Gratification sections). The Sage PDF was not retrievable.
+    verified: true
+    verification_note: 'Read the version-of-record abstract (OpenAlex record for DOI 10.1177/10597123241269740) and the arXiv preprint 2401.05375v1 (Definitions of Terms table; Error tolerance and Delayed Gratification sections). The Sage PDF was not retrievable. Independent check (gpt-6-astra, 2026-11-26, fulltext): Read the journal abstract through OpenAlex and the [arXiv v1 text](https://arxiv.org/pdf/2401.05375v1), especially the definitions table and Error tolerance and Delayed Gratification sections. These support the attributed distributed policies, frozen elements, fault tolerance and temporary regressions. The journal full text was not inspected.'
 - id: src-levin
   kind: source
   passage: 'Levin interprets capacities of this kind as a "free lunch": once a system has the right physical interface, mathematical facts supply features that did not have to be built separately, a view he connects to a latent space of patterns [@levin2025, p.'
@@ -618,8 +738,8 @@ claims:
     citation_id: levin2025
     locator: Section 4, p. 16
     depth: fulltext
-    verified: false
-    verification_note: Read the PsyArXiv version 3 PDF (OSF file 7k32r). The free-lunch passage is in Section 4; the latent space of patterns is in the abstract.
+    verified: true
+    verification_note: 'Read the PsyArXiv version 3 PDF (OSF file 7k32r). The free-lunch passage is in Section 4; the latent space of patterns is in the abstract. Independent check (gpt-6-astra, 2026-11-26, fulltext): Downloaded [OSF file 7k32r](https://osf.io/7k32r/download) and read the abstract and Section 4, p. 16. They support the attributed free-lunch/interface interpretation and its connection to a latent space of patterns.'
     quote: These kinds of features show up as a kind of “free lunch” in the physicist’s sense – with the right kind of pointer (or interface, or receiver) in physical space, one gets more out than one put in.
 - id: src-dijkstra
   kind: source
@@ -628,17 +748,17 @@ claims:
     citation_id: dijkstra1974
     locator: Abstract
     depth: abstract
-    verified: false
-    verification_note: 'Read the ACM abstract: keeping the relation that the system is in a legitimate state invariant.'
+    verified: true
+    verification_note: 'Read the ACM abstract: keeping the relation that the system is in a legitimate state invariant. Independent check (gpt-6-astra, 2026-11-26, abstract): Read the [Dijkstra abstract](https://doi.org/10.1145/361179.361202) through OpenAlex. It explicitly describes maintaining the legitimate-state relation under distributed process steps. This verdict covers the Dijkstra clause; the other separately cited clauses in the bound passage are not supported by Dijkstra.'
 - id: src-mulmuley
   kind: source
-  passage: 'Algebraic complexity theory separates the determinant, computable by polynomial-size circuits, from the permanent, which is complete for Valiant''s class VNP in characteristic other than two [@valiant1979classes; @burgisser2000]; computing the permanent of a 0-1 matrix is #P-complete [@valiant1979permanent].'
+  passage: Geometric complexity theory recasts such lower-bound questions as questions about orbits under reductive group actions [@mulmuley2001].
   evidence:
     citation_id: mulmuley2001
     locator: Abstract
     depth: abstract
-    verified: false
-    verification_note: 'Read the SIAM abstract via OpenAlex: lower-bound problems reduced to problems about orbits of partially stable points in reductive-group representations.'
+    verified: true
+    verification_note: 'Read the SIAM abstract via OpenAlex: lower-bound problems reduced to problems about orbits of partially stable points in reductive-group representations. Independent check (gpt-6-astra, 2026-11-26, abstract): Read the [Mulmuley–Sohoni abstract](https://doi.org/10.1137/S009753970038715X) through OpenAlex. It reduces complexity lower-bound problems to questions concerning orbits of partially stable points in reductive-group representations, supporting the corrected passage.'
 - id: src-szego
   kind: source
   passage: Pólya asked in 1913 when signs can be attached to the entries of a matrix so that its permanent becomes the determinant of the signed matrix, and Szegő showed that for every $n\ge 3$ some $n\times n$ matrix admits no such signs [@mccuaig2004, p.
@@ -646,8 +766,8 @@ claims:
     citation_id: mccuaig2004
     locator: p. 11
     depth: fulltext
-    verified: false
-    verification_note: Read the open-access EJC PDF; page 11 states Pólya's question and Szegő's result for n at least 3, citing Pólya (1913) and Szegő (1913).
+    verified: true
+    verification_note: "Read the open-access EJC PDF; page 11 states Pólya's question and Szegő's result for n at least 3, citing Pólya (1913) and Szegő (1913). Independent check (gpt-6-astra, 2026-11-26, fulltext): Read p. 11 and the historical references in [McCuaig's published text](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i1r79/pdf). They state Pólya's signing question and Szegő's counterexample result for every n≥3. The original 1913 works were not inspected."
     quote: It was soon discovered by Szegö [43] that for every n ≥ 3, Pólya’s method does not work for some n×n matrix.
 - id: src-vy-little
   kind: source
@@ -656,8 +776,272 @@ claims:
     citation_id: robertson1999
     locator: Section 1, statements 1.1 and 1.2
     depth: fulltext
-    verified: false
-    verification_note: 'Read the arXiv version math/9911268 of the Annals paper: statement 1.1 (Vazirani and Yannakakis, Pólya matrix iff Pfaffian orientation) and 1.2 (Little, no K3,3), and the abstract on the polynomial-time algorithm. McCuaig''s abstract states structural characterisations implying polynomial algorithms.'
+    verified: true
+    verification_note: 'Read the arXiv version math/9911268 of the Annals paper: statement 1.1 (Vazirani and Yannakakis, Pólya matrix iff Pfaffian orientation) and 1.2 (Little, no K3,3), and the abstract on the polynomial-time algorithm. McCuaig''s abstract states structural characterisations implying polynomial algorithms. Independent check (gpt-6-astra, 2026-11-26, fulltext): Read the abstract and Section 1, statements 1.1–1.3, of [Robertson–Seymour–Thomas](https://arxiv.org/pdf/math/9911268), plus McCuaig''s abstract and historical discussion. These support the signing/Pfaffian equivalence, Little''s excluded central even subdivisions of K3,3, and polynomial-time recognition. McCuaig also supports the Kasteleyn attribution.'
+- id: src-marcus-may
+  kind: source
+  passage: Marcus and May prove the permanent statement as a case of a theorem on linear maps of rectangular matrices that preserve all permanental compounds of a given order [@marcus1962, p.
+  evidence:
+    citation_id: marcus1962
+    locator: p. 179, main Theorem
+    depth: fulltext
+    verified: true
+    verification_note: 'Read the Cambridge publisher PDF: the main theorem on p. 179 covers linear maps of m x n matrices preserving permanental compounds of order r (field with at least r elements, characteristic not 2), and its remark gives the permanent preservers. Independent check (gpt-6-astra, 2026-11-26, fulltext): Read the definitions and main theorem on pp. 177–179 of the [publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FD9164EC8C97953476FBCE6BEAC5224D/S0008414X00017600a.pdf/div-class-title-the-permanent-function-div.pdf). The rectangular permanental-compound theorem applies with two rows, compound order two and identity action on the compound, supporting the stated antecedent.'
+    quote: Suppose that the ground field F contains at least r elements, and is not of characteristic 2.
+- id: src-anderson-rubin
+  kind: source
+  passage: Recovering a low-rank symmetric matrix from its off-diagonal entries is the identification problem of factor analysis, where Anderson and Rubin showed that a rank-$m$ factor structure is identified when deleting any row leaves two disjoint submatrices of rank $m$ [@anderson1956, p.
+  evidence:
+    citation_id: anderson1956
+    locator: Theorem 5.1, p. 118
+    depth: fulltext
+    verified: true
+    verification_note: 'Read the Berkeley digital-collection scan of the Proceedings article: Lemma 5.1 and Theorem 5.1 with proof on pp. 118-119. Greek symbols restored in the quote from an OCR text layer. Independent check (gpt-6-astra, 2026-11-26, fulltext): Downloaded the [Berkeley scan](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf) and read Lemma 5.1, Theorem 5.1 and its proof on pp. 118–119. They establish the stated row-deletion sufficient condition and identification up to an orthogonal transformation. The manuscript separately proves its extension to the split form in odd characteristic.'
+    quote: A sufficient condition for identification of Σ and Λ up to multiplication on the right by an orthogonal matrix is that if any row of Λ is deleted there remain two disjoint submatrices of rank m.
+- id: design-abstract-trials
+  kind: definition
+  passage: Exhaustive checks over 1,381,440 matrix-graph pairs and 400 seeded trials over $\mathbb{F}_{101}$ agree with these theorems.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Field order 101 for the randomised trials: randomized_trials(p=101) in simulation/collective.py, called from run_all.py.'
+- id: design-abstract-reach
+  kind: definition
+  passage: 'State-dependent moves remove this rigidity at size three: every $3\times 3$ matrix over $\mathbb{F}_5$ with nonzero permanent can reach a readable form.'
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Size 3 (3x3 matrices) and field order 5: state_dependent_reachability(p) with n = 3 over p in (3, 5) in run_all.py; the abstract reports the p = 5 case.'
+- id: design-exhaustive
+  kind: definition
+  passage: For every invertible $3\times 3$ matrix over $\mathbb{F}_2$ and $\mathbb{F}_3$ and every invertible $4\times 4$ matrix over $\mathbb{F}_2$, on every labelled communication graph, the enumeration built the protocol's transition graph and computed which states can reach a readable state, which reach one almost surely (no reachable trap), and whether the deficit $n-q$ is attained.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Exhaustive settings (n, p) = (3, 2), (3, 3), (4, 2): exhaustive_protocol(n, p) loop in run_all.py; all labelled graphs on n vertices.'
+- id: design-randomised
+  kind: definition
+  passage: 'The randomised experiment used exact arithmetic over $\mathbb{F}_{101}$ with sizes $n\in\{4,6,8,12,16\}$ and four conditions, each with 20 matrices per size: a uniformly random invertible matrix on the complete graph; a random invertible matrix on a ring with $n$ random chords from which each edge was deleted with probability 0.3, conditioned on staying connected; a matrix built so that two disconnected components have disjoint profiles, with each component''s rows hidden by a random invertible mixing; and a random invertible matrix on the same kind of two-component graph.'
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Field order 101; sizes 4, 6, 8, 12, 16; four conditions; 20 matrices per size and condition (per_cell=20); edge deletion probability 0.3 on a ring with n chords; two components in the split conditions: randomized_trials and make_case in simulation/collective.py, arguments in run_all.py.'
+- id: design-contacts
+  kind: definition
+  passage: Contacts were offered uniformly over surviving edges with $\beta=1/2$ and a budget of $50n^3$ offers.
+  rationale: Experimental design, fixed in code before the recorded run (not an empirical result). Swap probability beta = 1/2 (coin rng.random() < 0.5 in run_trial) and budget 50 n^3 offers (budget_factor=50) in simulation/collective.py and run_all.py.
+- id: design-feasible-conditions
+  kind: definition
+  passage: Completion times grew roughly polynomially in $n$ under all three feasible conditions (Figure 1b).
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Three feasible conditions: intact, damaged connected and split compatible, the conditions with q = 0 by construction or by connectivity; plotted in Figure 1b.'
+- id: design-caption
+  kind: definition
+  passage: (a) Over $\mathbb{F}_{101}$, completion within budget coincides with the predicted $q=0$; without swaps, sparse connected graphs stall.
+  rationale: Experimental design, fixed in code before the recorded run (not an empirical result). Field order 101, as in randomized_trials(p=101).
+- id: design-preservers
+  kind: definition
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Preserver-search settings (n, p) = (2, 3), (3, 2), (3, 3), (3, 5), (4, 2), (4, 3) for det and perm: classify_preservers loop in run_all.py.'
+- id: design-preservers-f2
+  kind: definition
+  passage: Over $\mathbb{F}_2$ both searches found the 6 elements of $\mathrm{SL}_2(\mathbb{F}_2)$.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Field order 2 at n = 3 and n = 4: classify_preservers settings (3, 2) and (4, 2).'
+- id: design-preservers-n2
+  kind: definition
+  passage: For $n=2$ over $\mathbb{F}_3$ the search found 1,152 determinant preservers, because when the pair is the whole matrix column operations are also local; this is why the theorem needs $n\ge 3$.
+  rationale: Experimental design, fixed in code before the recorded run (not an empirical result). Setting (n, p) = (2, 3) of classify_preservers, included to show why n >= 3 is needed.
+- id: design-det-fibres
+  kind: definition
+  passage: Every independent pair has exactly $|\mathrm{SL}_2(\mathbb{F}_p)|=p(p^2-1)$ admissible replacements, which the census confirmed for $p=3$ and $p=5$ at $n=3,4,5$.
+  rationale: Experimental design, fixed in code before the recorded run (not an empirical result). Fibre census settings p = 3 and 5 at n = 3, 4, 5 (fibre_census loop in run_all.py); det_fibre_min = det_fibre_max = p(p^2-1) recorded in /fibres.
+- id: design-reach-n3
+  kind: definition
+  passage: At $n=3$ no independent pair is frozen, and the exhaustive reachability computation over all $3\times 3$ matrices over $\mathbb{F}_5$ found that every one of the 1,513,600 matrices with nonzero permanent can reach a readable form through permanent-preserving pair moves, on the complete graph and on the path alike, with the matrices of each permanent value forming a single class.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Exhaustive reachability at n = 3 (3x3 matrices) over field order 5, complete graph and path: state_dependent_reachability in run_all.py.'
+- id: reach-single-class
+  kind: interpretation
+  passage: At $n=3$ no independent pair is frozen, and the exhaustive reachability computation over all $3\times 3$ matrices over $\mathbb{F}_5$ found that every one of the 1,513,600 matrices with nonzero permanent can reach a readable form through permanent-preserving pair moves, on the complete graph and on the path alike, with the matrices of each permanent value forming a single class.
+  rationale: '''A single class'' per nonzero permanent value: /reach_n3/p5_complete/perm/components_nonzero = 4 and /reach_n3/p5_path/perm/components_nonzero = 4, equal to the number of nonzero values in F_5.'
+- id: design-frozen
+  kind: definition
+  passage: At $n=5$ over $\mathbb{F}_5$, 6,328,320 of the 9,746,880 independent pairs are frozen, and 458 of 20,000 uniformly random matrices have all ten row pairs frozen.
+  rationale: Experimental design, fixed in code before the recorded run (not an empirical result). Setting n = 5 over field order 5 (fibre_census(5, 5) and frozen_fraction(5, 5, ..., 20000, seed=7)); a 5x5 matrix has ten row pairs, C(5,2) = 10.
+- id: design-cert-exhaustive
+  kind: definition
+  passage: 'The exhaustive census found no certified pair that is not frozen: at $n=5$ over $\mathbb{F}_5$, 6,266,880 of the 6,328,320 frozen pairs are certified, and at $n=6$ over $\mathbb{F}_3$, 337,920 of 407,040.'
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Exhaustive certificate settings (n, p) = (5, 3), (5, 5), (6, 3): certificate_exhaustive loop in run_all.py.'
+- id: design-cert-sampled
+  kind: definition
+  passage: In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Sampled settings n = 5 over F_101 (seed 3) and 5x5 matrices over F_1009 (seed 5): certificate_sampled calls in run_all.py.'
+- id: design-greedy
+  kind: definition
+  passage: For the determinant this rule reproduces elimination, and the agents completed 200 of 200 matrices in each of the five settings.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Five settings (n, p) = (3, 5), (4, 5), (5, 5), (5, 3), (6, 3): greedy_paired loop in run_all.py.'
+- id: design-greedy-perm
+  kind: definition
+  passage: For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  rationale: Experimental design, fixed in code before the recorded run (not an empirical result). Settings n = 3, 4, 5, 5, 6 with field orders 5, 5, 5, 3, 3 as in greedy_paired loop in run_all.py.
+- id: design-eight-graphs
+  kind: definition
+  passage: Conversely, restricting to permutations that move only three rows $i<j<k$ among the columns $\{i,j,k\}$ turns inversions with fixed rows into entry-dependent signs, so $E$ restricted to $\{i,j,k\}$ must itself be admissible for $n=3$; enumeration of the eight graphs on three vertices shows this means $|E\cap\{ij,ik,jk\}|$ is even.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Eight graphs on three vertices: all 2^3 subsets of the three pairs; the n = 3 case of the census (sign_census n3 records graphs = 8).'
+- id: design-sign-range
+  kind: definition
+  passage: For $n=3,\dots,7$ the admissible sets of the computation were exactly the cuts; at $n=7$, 64 of the 2,097,152 rules give a signed determinant and another 64 a signed permanent.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Census sizes n = 3 to 7: sign_census loop range(3, 8) in run_all.py; n = 7 is the largest.'
+- id: design-clique
+  kind: definition
+  passage: All 20 numerical checks of this identity, at $n=6$ and $n=7$, passed.
+  rationale: 'Experimental design, fixed in code before the recorded run (not an empirical result). Check sizes n = 6 (T = {0,2,3,5}) and n = 7 (T = {1,2,4,6}), ten checks each: clique_projection_check calls in run_all.py.'
+- id: interp-progress
+  kind: interpretation
+  passage: At $n=3$, and for many pairs over small fields, state-dependent permanent-preserving moves exist, some with closed forms, and they make full progress at $n=3$ and substantial progress at $n=4$ and $n=5$.
+  rationale: Summarises /reach_n3 (full progress at n = 3) and /greedy_paired perm completions at n = 4 (200 of 200) and n = 5 (105 and 164 of 200).
+- id: numwords-l9
+  kind: definition
+  passage: 'Agents that each hold one row of an invertible matrix over a finite field, and see only their own row and a neighbour''s, can preserve the determinant without observing it: subtracting multiples of rows and exchanging rows with a sign change are determinant-one maps of two rows. We ask what supplies this capacity and whether the permanent shares it. On a communication graph, determinant-one moves of adjacent pairs generate the full special linear group on each connected component, so the reachable matrices are those sharing each component''s exterior product of rows. Agents can reach a form whose determinant is readable from per-row summaries exactly when the pivot profiles of the components'' row spaces are disjoint, and a randomised local protocol then reaches it with probability one. Exhaustive checks over 1,381,440 matrix-graph pairs and 400 seeded trials over $\mathbb{F}_{101}$ agree with these theorems. In characteristic other than two we prove that the only linear maps of two rows preserving the permanent in every matrix of size at least three are scalings and exchanges, against all of $\mathrm{SL}_2$ for the determinant, so agents restricted to them never create a zero. State-dependent moves remove this rigidity at size three: every $3\times 3$ matrix over $\mathbb{F}_5$ with nonzero permanent can reach a readable form. From size five a rank-two completion argument restores it: over $\mathbb{F}_p$ at most a fraction $4n/p$ of row pairs admit a permanent-preserving replacement beyond scalings and exchanges. The results do not bear on whether VP differs from VNP.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Abstract: one row per agent, two rows per move, probability one, characteristic other than two, sizes three and five are model and theorem constants.'
+- id: numwords-l13
+  kind: definition
+  passage: Give each of $n$ agents one row of an invertible matrix over a finite field. An agent sees its own row and, during a contact, the row of one neighbour in a communication graph. No agent sees the matrix, its determinant or the graph. Can such agents transform the matrix into a form from which the determinant can be read off, without ever changing the determinant on the way?
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Model definition: one row per agent, one neighbour per contact.'
+- id: numwords-l15
+  kind: definition
+  passage: 'For the determinant the answer is yes, and the reason is elementary: subtracting a multiple of one row from another, or exchanging two rows while negating one of them, multiplies the determinant by one. Two agents can apply these moves using only their own two rows, so a global quantity is preserved by operations that are each local and blind to it. The same question for the permanent, $\operatorname{perm} A=\sum_{\sigma}\prod_i a_{i\sigma(i)}$, has a different answer, and the difference is the subject of this paper.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Definition of the moves: one row subtracted from another, two rows exchanged with one negated; determinant multiplier one; two agents act on their two rows.'
+- id: numwords-l19
+  kind: definition
+  passage: The answer has three parts. The capacity comes from the group of determinant-one row operations, and on any communication graph the moves of adjacent pairs generate the whole of that group on each connected component. Whether the agents can reach a readable form is decided by an exact criterion that combines the graph with the information each component holds. For the permanent, the linear moves of a row pair that preserve it in every matrix are only scalings and exchanges, so they never create a zero. When agents may instead choose any permanent-preserving replacement of their two rows as a function of what they see, the picture changes at small sizes, and the measured advantage of the determinant appears only as $n$ grows.
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Summary of the model: a replacement acts on two rows.'
+- id: numwords-l21
+  kind: definition
+  passage: 'Related work spans three areas that rarely meet. Distributed computing has studied systems in which local steps maintain a global property: Dijkstra''s self-stabilising systems keep the relation "the system is in a legitimate state" invariant under the steps of loosely coupled processes [@dijkstra1974]; gossip algorithms compute averages through random pairwise exchanges [@boyd2006]; algebraic gossip spreads messages through random linear coding over finite fields [@deb2006]; population protocols characterise what pairwise interactions of finite-state agents can compute [@angluin2006]; and generic pairwise elimination has been parallelised with attention to communication cost [@tiskin2007]. Algebraic complexity theory separates the determinant, computable by polynomial-size circuits, from the permanent, which is complete for Valiant''s class VNP in characteristic other than two [@valiant1979classes; @burgisser2000]; computing the permanent of a 0-1 matrix is #P-complete [@valiant1979permanent]. Whether VP differs from VNP is open. Geometric complexity theory recasts such lower-bound questions as questions about orbits under reductive group actions [@mulmuley2001]. The classical linear preserver theorems identify the global symmetries involved: the linear maps preserving the determinant of every matrix are $X\mapsto UXV$ or $X\mapsto UX^{\top}V$ with $\det(UV)=1$, a result that goes back to Frobenius and was extended to general fields by Dieudonné [@li2001; @dieudonne1949], while the permanent''s linear preservers are products of permutation and diagonal matrices, possibly with a transpose [@marcus1962; @botta1967]. Marcus and May prove the permanent statement as a case of a theorem on linear maps of rectangular matrices that preserve all permanental compounds of a given order [@marcus1962, p. 179]. The results below are a localised version of this contrast: which symmetries are available to two rows acting alone, and what a network of such pairs can then achieve.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Hypotheses and scope: characteristic other than two (classical completeness hypothesis) and two rows acting alone (the pair-local setting).'
+- id: numwords-l25
+  kind: definition
+  passage: Fix a prime field $\mathbb{F}=\mathbb{F}_p$ (the algebraic statements hold over any field of characteristic other than two unless stated otherwise) and an invertible $n\times n$ matrix $A$ with rows $r_1,\dots,r_n$. Agent $i$ holds $r_i$. A communication graph $G$ on $\{1,\dots,n\}$ says which pairs can make contact. A pair move on the edge $\{i,j\}$ replaces $(r_i,r_j)$ by a pair $(u,v)$ computed from $(r_i,r_j)$ alone. It is determinant-preserving (permanent-preserving) if the determinant (permanent) of every $n\times n$ matrix that contains $r_i$ and $r_j$ in rows $i$ and $j$ is unchanged, whatever the other rows are.
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Standing hypothesis of the model: characteristic other than two for the algebraic statements.'
+- id: numwords-l33
+  kind: definition
+  passage: 'The protocol used in the experiments is a specific determinant-preserving policy. On a contact along $\{i,j\}$ with $i<j$: if the two leads are equal to $c$, agent $j$ sets $r_j\leftarrow r_j-(r_j[c]/r_i[c])\,r_i$; if they differ, the pair performs the signed swap $(r_i,r_j)\leftarrow(r_j,-r_i)$ with probability $\beta$ and otherwise does nothing. Both operations act on the pair by a $2\times 2$ matrix of determinant one. An unsigned swap has determinant $-1$ and would flip the sign of $\det A$.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Protocol definition: comparison of two leads; moves are 2x2 matrices of determinant one.'
+- id: numwords-l37
+  kind: definition
+  passage: '**Theorem 1 (orbits).** Let $\Gamma_G$ be the group generated by all pair moves $(r_i,r_j)\mapsto(ar_i+br_j,\,cr_i+dr_j)$ with $ad-bc=1$ along edges of $G$. Then $\Gamma_G=\prod_C \mathrm{SL}_{|C|}(\mathbb{F})$, each factor acting on the rows held in one component. Consequently a matrix $B$ is reachable from an invertible $A$ exactly when, for every component $C$, the exterior product of the rows of $B$ held in $C$, taken in index order, equals that of $A$.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Constants of the theorem statement: one group factor per component.'
+- id: numwords-l39
+  kind: definition
+  passage: '*Proof.* Each generator is block diagonal with determinant-one blocks, which gives one inclusion. For the other, write $E_{ij}(t)$ for the move $r_j\leftarrow r_j+t\,r_i$. For distinct $i,k,j$ the commutator of $E_{ik}(s)$ and $E_{kj}(t)$ is $E_{ij}(\pm st)$, so by induction along a path every $E_{ij}(t)$ with $i,j$ in the same component lies in $\Gamma_G$. These elementary transvections generate $\mathrm{SL}_{|C|}(\mathbb{F})$ over any field. For the orbit statement, the rows of $A$ in $C$ form a basis of $W_C$, and two ordered bases of the same subspace differ by a determinant-one change of basis exactly when their exterior products agree; a nonzero decomposable exterior product determines its subspace. $\square$'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Proof step: two ordered bases of one subspace.'
+- id: numwords-l45
+  kind: definition
+  passage: '*Proof.* Every row held in $C$ lies in $W_C$, so its lead lies in $P_C$, and the leads of any matrix in the orbit lie in $\bigcup_C P_C$, a set of $n-q$ columns. Conversely, an echelon basis of $W_C$ has leads exactly $P_C$; rescaling one of its vectors matches the exterior product of $A$''s rows in $C$ without changing any lead, and Theorem 1 places the resulting matrix in the orbit. Its set of leads is $\bigcup_C P_C$. $\square$'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Proof step: rescaling one vector of an echelon basis.'
+- id: numwords-l47
+  kind: definition
+  passage: 'The criterion depends on the graph and the data together. A disconnected graph can still permit completion when its components hold complementary information: if one component''s rows span vectors supported on columns $\{1,2\}$ onward and the other''s have profile $\{3,4\}$, the profiles are disjoint and $q=0$. Two components whose row spaces share a profile column cannot both supply it, whatever the agents do.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Illustrative example: one component''s profile versus two components sharing a profile column.'
+- id: numwords-l49
+  kind: definition
+  passage: '**Theorem 3 (the protocol).** Suppose the graph is fixed, each edge is offered for contact at each step with probability at least $p_{\min}>0$ independently of the past, and $0<\beta\le 1$. If $q=0$ the protocol reaches a readable matrix with probability one, and once readable it stays readable. If $q>0$ it never reaches one, and with probability one it reaches the bound $n-q$ of Theorem 2.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Constants of the theorem statement: probability one in both conclusions.'
+- id: numwords-l51
+  kind: definition
+  passage: '*Proof.* Let $\Phi=\sum_i\operatorname{lead}(r_i)$. A swap leaves $\Phi$ unchanged and an elimination strictly increases the recipient''s lead (the recipient stays nonzero because the rows stay independent), so $\Phi$ increases at most $n(n-1)$ times. Suppose some component contains two rows with the same lead $\ell$. Choose such a pair at minimum distance in $G$ and a shortest path between them. No interior vertex of the path holds a row with lead $\ell$, so the signed swaps along the path are permitted, carry one of the two rows (possibly negated, which keeps its lead) next to the other in at most $L-1$ contacts, where $L$ is the largest component size minus one, and the next contact eliminates. This sequence has probability at least $\alpha=p_{\min}^{L}\beta^{L-1}>0$ in every block of $L$ offers, whatever happened before, so an increase of $\Phi$ occurs with probability one. After the last increase every component has distinct leads, which by Theorem 2 are exactly $P_C$. Contacts only occur inside components, so no further elimination happens and swaps only permute rows within components. If $q=0$ this state is readable; if $q>0$, Theorem 2 rules out readability. $\square$'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Proof steps: two rows with the same lead, carrying one of them, an event of probability one.'
+- id: numwords-l63
+  kind: definition
+  passage: '![Determinant-preserving agents and their permanent counterparts. (a) Over $\mathbb{F}_{101}$, completion within budget coincides with the predicted $q=0$; without swaps, sparse connected graphs stall. (b) Contacts until the first readable state for the feasible cases. (c) Share of linearly independent row pairs whose permanent-preserving replacements are only the scalings and exchanges of Theorem 4 (frozen), and share certified by Theorem 6; for the determinant every independent pair has only its $\mathrm{SL}_2$ orbit. (d) Greedy agents that can apply any value-preserving replacement of their two rows, choosing one that moves leads furthest right, on the same random matrices with nonzero determinant and permanent.](figure_main.png){width=100%}'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Figure caption: a replacement of two rows (model definition).'
+- id: numwords-l71
+  kind: definition
+  passage: '*Proof.* Laplace expansion along the two rows writes the determinant (permanent) of the matrix as $\sum_{s<t}\pm\varphi_{st}(x,y)\,M_{st}$, where $\varphi_{st}(x,y)=x_sy_t-x_ty_s$ (respectively $x_sy_t+x_ty_s$) and $M_{st}$ is the complementary $(n-2)\times(n-2)$ minor (permanent) of the other rows. The $M_{st}$ are multilinear polynomials in the other rows'' entries with pairwise disjoint sets of monomials, and a multilinear polynomial that vanishes everywhere on $\mathbb{F}$ is zero. Hence $\Phi$ preserves the value for every completion if and only if $\varphi_{st}(\Phi(x,y))=\varphi_{st}(x,y)$ for all $s<t$ and all $x,y$.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Proof step: Laplace expansion along the two rows of the pair.'
+- id: numwords-l73
+  kind: definition
+  passage: 'Write $\Phi(x,y)=(L,M)$ with coordinates $L_s,M_s$, linear forms in the $2n$ variables. Since $|\mathbb{F}|\ge 3$, the identity $L_sM_t\pm L_tM_s=\varphi_{st}$ holds as polynomials. The quadratic form $\varphi_{st}$ has rank four and involves exactly $x_s,x_t,y_s,y_t$. The symmetric matrix of $L_sM_t\pm L_tM_s$ has its row space inside the span of $L_s,M_t,L_t,M_s$, so these four forms are independent and span $\langle x_s,x_t,y_s,y_t\rangle$. Taking two different partners $t,u$ of $s$, which needs $n\ge 3$, gives $\langle L_s,M_s\rangle=\langle x_s,y_s\rangle$: each new column depends only on the same old column, $(L_s,M_s)^{\top}=g_s(x_s,y_s)^{\top}$. Substituting, $\varphi_{st}(\Phi)=w_s^{\top}g_s^{\top}Hg_tw_t$ with $w_s=(x_s,y_s)^{\top}$ and $H=J$ (respectively $K$), so $g_s^{\top}Hg_t=H$ for all $s\neq t$. With three indices this forces all $g_s$ to be one matrix $g$ with $g^{\top}Hg=H$. For $H=J$ this is $\det g=1$. For $H=K$, writing $g=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$ gives $2ac=0$, $2bd=0$ and $ad+bc=1$, whose solutions are the two monomial families. The converse is a direct check. $\square$'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Proof steps: field size at least 3 (char not 2), rank four of the pair form, four independent linear forms, two partners and three indices (n >= 3), one common matrix, two monomial families.'
+- id: numwords-l75
+  kind: definition
+  passage: The permanent half of Theorem 4 is the case of two rows and compound order two of the Marcus and May theorem; the proof above is included because the same argument gives both halves. The determinant's two-row group is the isometry group of an alternating form, which in dimension two is all of $\mathrm{SL}_2$ and contains the transvections that create zeros. The permanent's is the isometry group of a split symmetric form, a one-dimensional torus extended by an exchange, which contains no transvection. In characteristic two the forms coincide, the permanent equals the determinant, and the permanent's local group becomes $\mathrm{SL}_2$ as well.
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Remark constants: two rows and compound order two (Marcus-May case), dimension two, torus of dimension one, characteristic two.'
+- id: numwords-l87
+  kind: definition
+  passage: For the permanent, the admissible replacements of a pair are all pairs with the same $2\times 2$ permanents, a set that contains the monomial orbit of Theorem 4 and can be larger. Call a pair frozen when the two coincide. A frozen pair stays frozen under scalings and exchanges, so a matrix all of whose row pairs are frozen can only reach its Corollary 5 orbit, even with state-dependent moves.
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Definition: pair permanents are the 2x2 permanents of the pair.'
+- id: numwords-l89
+  kind: definition
+  passage: 'The census shows that freezing depends strongly on size. At $n=3$ no independent pair is frozen, and the exhaustive reachability computation over all $3\times 3$ matrices over $\mathbb{F}_5$ found that every one of the 1,513,600 matrices with nonzero permanent can reach a readable form through permanent-preserving pair moves, on the complete graph and on the path alike, with the matrices of each permanent value forming a single class. Only 48,000 of them are readable to begin with, which is what linear moves can exploit. At $n=3$ the permanent''s local rigidity is therefore a property of fixed linear moves and disappears once moves may depend on the state. The extra moves can have closed forms: with $a,b,c$ the pair permanents on column pairs $\{1,2\},\{1,3\},\{2,3\}$ and $b\neq 0$, the replacement $u=(1,c/b,0)$, $v=(0,a,b)$ has the same pair permanents and creates two zeros. At $n=5$ over $\mathbb{F}_5$, 6,328,320 of the 9,746,880 independent pairs are frozen, and 458 of 20,000 uniformly random matrices have all ten row pairs frozen. Over these small fields many pairs are special, so most matrices still admit some extra move. The rigidity returns over larger fields, for a reason identified in factor analysis.'
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Worked identity: the closed-form replacement has two zeros, checked symbolically in the text.'
+- id: numwords-l91
+  kind: definition
+  passage: Write $S=xy^{\top}+yx^{\top}$ for a pair $(x,y)$. Its off-diagonal entries $S_{st}=x_sy_t+x_ty_s$ are exactly the pair permanents, and its diagonal entries $2x_sy_s$ are not observed. A replacement $(u,v)$ is admissible when $S'=uv^{\top}+vu^{\top}$ agrees with $S$ off the diagonal. Recovering a low-rank symmetric matrix from its off-diagonal entries is the identification problem of factor analysis, where Anderson and Rubin showed that a rank-$m$ factor structure is identified when deleting any row leaves two disjoint submatrices of rank $m$ [@anderson1956, p. 118]; the algebraic geometry of such models is developed by Drton, Sturmfels and Sullivant [@drton2007]. The same argument applies here over any field of characteristic other than two.
+  rationale: 'Number words that are constants of the model definition, theorem statements or proof steps, not empirical results. Hypothesis of the adapted argument: characteristic other than two.'
+- id: numwords-para-01
+  kind: definition
+  passage: 'The lead of a nonzero row is the index of its first nonzero entry. A matrix is readable when its rows have pairwise distinct leads. Sorting the rows by lead then gives an upper triangular matrix, so $\det A=\operatorname{sgn}(\pi)\prod_i r_i[\operatorname{lead}(r_i)]$, where $\pi$ is the sorting permutation, and $\operatorname{perm}A=\prod_i r_i[\operatorname{lead}(r_i)]$. An observer needs only the triple (agent, lead, pivot value) from each agent. When leads repeat, these summaries do not determine the determinant: some column $j$ is nobody''s lead, and multiplying column $j$ by $t\neq 1$ changes no lead and no pivot value while multiplying the determinant by $t$.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-02
+  kind: definition
+  passage: 'The determinant itself is recovered from the component invariants, since $\det A$ is, up to the sign of a fixed reordering, the exterior product of the component invariants. Theorem 1 therefore lists everything local determinant-one moves preserve: the Plücker coordinates of each component''s rows, and nothing else.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-03
+  kind: definition
+  passage: 'The proof gives a finite expected completion time, but the bound $n(n-1)L/\alpha$ grows exponentially with component size and predicts nothing useful about observed times. The protocol assumes atomic, exact pair updates on a fixed graph. It does not cover concurrent stale reads, arithmetic faults or graphs that change during the run, and the agents cannot detect that they have finished: an external observer collects the summaries.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-04
+  kind: definition
+  passage: 'Theorem 1 shows where the determinant''s local capacity comes from: a two-row symmetry group, $\mathrm{SL}_2$, whose copies along the edges generate a large global symmetry group. The next theorem identifies the corresponding two-row group for the permanent.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-05
+  kind: definition
+  passage: '**Theorem 4 (pair-local linear preservers).** Let $\mathbb{F}$ have characteristic other than two, let $n\ge 3$, and let $\Phi$ be a linear map of pairs of rows. Then $\Phi$ preserves the determinant of every $n\times n$ matrix containing the pair if and only if $\Phi(x,y)=(ax+by,\,cx+dy)$ with $g=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$ satisfying $g^{\top}Jg=J$, $J=\begin{psmallmatrix}0&1\\-1&0\end{psmallmatrix}$, that is $\det g=1$. It preserves the permanent of every such matrix if and only if $\Phi$ has the same form with $g^{\top}Kg=K$, $K=\begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}$, that is $g=\begin{psmallmatrix}\alpha&0\\0&\alpha^{-1}\end{psmallmatrix}$ or $g=\begin{psmallmatrix}0&\alpha\\ \alpha^{-1}&0\end{psmallmatrix}$.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-06
+  kind: definition
+  passage: An exhaustive search confirmed Theorem 4 on small cases without assuming linearity of any particular shape. A quadratic map is preserved by a linear map exactly when its values on a basis and its polar form on pairs of basis vectors are preserved, so a backtracking search over images of basis vectors finds every linear preserver. For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4. These are the orders of $\mathrm{SL}_2(\mathbb{F}_p)$ and of the monomial group of Theorem 4, and every preserver found had the stated form. Over $\mathbb{F}_2$ both searches found the 6 elements of $\mathrm{SL}_2(\mathbb{F}_2)$. For $n=2$ over $\mathbb{F}_3$ the search found 1,152 determinant preservers, because when the pair is the whole matrix column operations are also local; this is why the theorem needs $n\ge 3$.
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-07
+  kind: definition
+  passage: '**Corollary 5.** On a connected graph, linear permanent-preserving pair moves generate exactly the maps $A\mapsto PDA$ with $P$ a permutation matrix and $D$ diagonal with $\det D=1$. Every row keeps its set of nonzero positions up to relabelling of rows, no move creates or destroys a zero, and a readable form is reachable only from a matrix that is already readable up to the order of its rows.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-08
+  kind: definition
+  passage: 'The fraction of matrices that are readable is small: a matrix over $\mathbb{F}_p$ is readable for exactly $n!\,(p-1)^n p^{n(n-1)/2}$ of the $p^{n^2}$ matrices. Determinant-preserving agents on a connected graph reach a readable form from every invertible matrix.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-09
+  kind: definition
+  passage: '**Theorem 6 (rank-two rigidity).** Let $\operatorname{char}\mathbb{F}\neq 2$ and $n\ge 5$. Call $(x,y)$ certified if for every coordinate $i$ there are disjoint two-element sets $I,J\subseteq\{1,\dots,n\}\setminus\{i\}$ with $S[I,J]$ invertible. A certified pair is linearly independent and frozen: its only permanent-preserving replacements are $(\alpha x,\alpha^{-1}y)$ and $(\alpha y,\alpha^{-1}x)$. Over $\mathbb{F}_p$, a uniformly random pair fails to be certified with probability at most $4n/p$, and a uniformly random $n\times n$ matrix has an uncertified row pair with probability at most $2n^2(n-1)/p$.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-10
+  kind: definition
+  passage: '*Proof.* Let $(u,v)$ be admissible and fix $i$ with its sets $I,J$. The entries of $S''$ in rows $\{i\}\cup I$ and columns $\{i\}\cup J$ other than $S''_{ii}$ are off-diagonal, so they equal those of $S$. This $3\times 3$ submatrix has rank at most two and an invertible block $S[I,J]$, so its Schur complement vanishes: $S''_{ii}=S[i,J]\,S[I,J]^{-1}S[I,i]$, which is also $S_{ii}$. Hence $S''=S$. An invertible $2\times 2$ submatrix makes $\operatorname{rank}S=2$, so $x,y$ are independent, and the column space of $S$ is $\langle x,y\rangle=\langle u,v\rangle$. Writing $(u,v)^{\top}=g(x,y)^{\top}$ gives $S=X K X^{\top}$ and $S''=X g^{\top}KgX^{\top}$ with $X=[x\ y]$ of full column rank, so $g^{\top}Kg=K$ and $g$ is one of the monomial matrices of Theorem 4. For the bound, fix for each $i$ one choice of $I=\{a,b\}$, $J=\{c,d\}$. Then $\det S[I,J]$ is a polynomial of degree four in $(x,y)$, and it is not identically zero because $x=e_a+e_d$, $y=e_b+e_c$ makes $S[I,J]$ the identity. By the Schwartz bound [@schwartz1980] it vanishes with probability at most $4/p$; a union bound over the $n$ coordinates, and then over the $n(n-1)/2$ row pairs, gives the two estimates. $\square$'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-11
+  kind: definition
+  passage: 'With Corollary 5, Theorem 6 says that for $n\ge 5$ and $p$ large compared with $n^3$, almost every matrix is confined to its scaling-and-exchange orbit even when permanent-preserving agents may choose their moves from the state. The certificate is sufficient, not necessary. The exhaustive census found no certified pair that is not frozen: at $n=5$ over $\mathbb{F}_5$, 6,266,880 of the 6,328,320 frozen pairs are certified, and at $n=6$ over $\mathbb{F}_3$, 337,920 of 407,040. In seeded samples of 200,000 pairs, 199,689 were certified at $n=5$ over $\mathbb{F}_{101}$, where the bound guarantees at least 80% (it gives $1-20/101$), and 19,998 of 20,000 random $5\times 5$ matrices over $\mathbb{F}_{1009}$ had every row pair certified. On 10,000 certified coordinates the diagonal recovery formula reproduced $2x_iy_i$ with no errors.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-12
+  kind: definition
+  passage: To measure what the extra moves buy at small fields, the last experiment gave agents on the complete graph an oracle for every value-preserving replacement of their two rows and let each contact choose, uniformly among the replacements, one that maximises the sum of the two leads. Both polynomials were run on the same matrices, drawn uniformly subject to nonzero determinant and nonzero permanent, with the same contact schedule. For the determinant this rule reproduces elimination, and the agents completed 200 of 200 matrices in each of the five settings. For the permanent they completed 200 of 200 at $n=3$ and 200 of 200 at $n=4$ over $\mathbb{F}_5$, 105 of 200 at $n=5$ over $\mathbb{F}_5$, 164 of 200 at $n=5$ over $\mathbb{F}_3$, and 87 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d). The greedy rule is one policy, so a failure shows that this rule stalls, not that no sequence of permanent-preserving moves exists.
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-13
+  kind: definition
+  passage: $$D_E(A)=\sum_{\sigma}\operatorname{sgn}(\sigma)(-1)^{\operatorname{inv}_E(\sigma)}\prod_i a_{i\sigma(i)},$$
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-14
+  kind: definition
+  passage: '*Proof.* The coefficient of $\prod_i a_{i\sigma(i)}$ in $D_E$ is $\operatorname{sgn}(\sigma)(-1)^{\operatorname{inv}_E(\sigma)}$, so $D_E$ is a signed determinant exactly when $(-1)^{\operatorname{inv}_E(\sigma)}=c\prod_i s_{i\sigma(i)}$ for all $\sigma$. For a cut, counting crossing inversions modulo two gives $\operatorname{inv}_E(\sigma)\equiv\sum_{i\in S}(i+\sigma(i))+\text{const}$, which has this form. Conversely, restricting to permutations that move only three rows $i<j<k$ among the columns $\{i,j,k\}$ turns inversions with fixed rows into entry-dependent signs, so $E$ restricted to $\{i,j,k\}$ must itself be admissible for $n=3$; enumeration of the eight graphs on three vertices shows this means $|E\cap\{ij,ik,jk\}|$ is even. A set of edges of the complete graph meeting every triangle evenly is a cut, because triangles span its cycle space over $\mathrm{GF}(2)$. The permanent case is the same argument for the pairs that keep their sign. $\square$'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-15
+  kind: definition
+  passage: The case $E$ equal to all pairs, for $n\ge 3$, is Szegő's theorem for a matrix of independent entries. Because the condition is linear in $E$ over $\mathrm{GF}(2)$, it can be checked for all $2^{n(n-1)/2}$ sign rules at once. For $n=3,\dots,7$ the admissible sets of the computation were exactly the cuts; at $n=7$, 64 of the 2,097,152 rules give a signed determinant and another 64 a signed permanent.
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-16
+  kind: definition
+  passage: The remaining rules sit between the two polynomials, and a simple projection shows where hardness enters. If $E$ contains every pair inside a set $T$ of rows, setting each row outside $T$ to its unit vector and the entries of rows in $T$ outside the columns of $T$ to zero gives $D_E(A)=\operatorname{perm}(S\circ A_T)$ for an explicit sign matrix $S$. A circuit for $D_E$ therefore yields a circuit of the same size, plus sign changes, for the permanent of size $|T|$, so a family $D_{E_n}$ whose clique sizes grow polynomially in $n$ is as hard as the permanent up to polynomial factors. All 20 numerical checks of this identity, at $n=6$ and $n=7$, passed. Whether rules without large cliques, and without cut structure, can be computed efficiently was not determined.
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-17
+  kind: definition
+  passage: 'Theorems 1 to 4 make one reading of the free lunch exact. The determinant does not have to be known, estimated or transmitted for local agents to protect it: each permitted move is a determinant-one map of two rows, and these maps generate the full determinant-one group on every connected component. That group is large enough that its orbits are the level sets of a short list of invariants, and among its elements are the transvections that eliminate entries. The permanent''s two-row linear symmetries are scalings and exchanges, which preserve every zero pattern. In that sense the determinant''s local capacity is a consequence of its symmetry group, and the permanent lacks the corresponding local moves.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-18
+  kind: definition
+  passage: The permanent's missing moves are a statement about fixed linear moves, and, by Theorem 6, about almost all pairs once $n\ge 5$ and the field is large. At $n=3$, and for many pairs over small fields, state-dependent permanent-preserving moves exist, some with closed forms, and they make full progress at $n=3$ and substantial progress at $n=4$ and $n=5$. The oracle experiments measure what one greedy rule achieves with these moves; they say nothing about the cost of finding the moves and are not a computational lower bound.
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
+- id: numwords-para-19
+  kind: definition
+  passage: 'None of this bears directly on VP versus VNP, which remains open. An efficient algorithm for the permanent need not preserve the permanent at intermediate steps, so the absence of permanent-preserving eliminations is not a lower bound. The pair-local theorems are localised versions of the classical global preserver theorems, and the collective protocol is a distributed form of Gaussian elimination; their contribution is an exact, testable account of when locally blind agents can expose a global invariant and of which symmetry makes that possible. The experiments establish this for one designed protocol, a family of greedy policies and small fields. They do not measure causal emergence in any formal sense, and they show no learning, planning or behaviour outside what the stated rules imply. Open questions remain where the computations stop: a useful prediction of completion time from graph bottlenecks, and which matrices over small fields can reach a readable form through state-dependent permanent-preserving moves when $n\ge 4$.'
+  rationale: Number words and digits in this passage are constants of the model definition, theorem statements, proof steps, formula constants or labels, or restate counts bound by computation claims elsewhere; none is a new empirical result.
 runs:
 - id: main
   required: true

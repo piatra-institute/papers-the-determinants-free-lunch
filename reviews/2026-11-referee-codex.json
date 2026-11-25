@@ -1,0 +1,111 @@
+{
+  "paper": "The Determinant's Free Lunch: Local Symmetry and the Permanent's Missing Moves",
+  "central_claims": [
+    "Adjacent determinant-one row operations generate the special linear group on each connected component. The proof propagates elementary transvections along paths; component exterior products then characterize the reachable matrices.",
+    "A readable matrix is reachable exactly when the components' pivot profiles are disjoint. The union of those profiles bounds the number of distinct leads, and appropriately rescaled echelon bases attain that bound.",
+    "The proposed randomized protocol almost surely attains the optimum number of distinct leads. Elimination increases a bounded potential, while signed swaps give a positive-probability route to another elimination whenever a component contains duplicate leads.",
+    "For n≥3 in characteristic other than two, universally value-preserving linear pair maps are SL₂ for the determinant and reciprocal scalings or exchanges for the permanent. Laplace expansion reduces preservation to quadratic pair forms, whose simultaneous linear preservers yield the classification.",
+    "State-dependent permanent moves have larger fibres. Exhaustive enumeration establishes complete readability reachability for nonzero-permanent 3×3 matrices over F₅; larger-size greedy trials show lower completion rates within their stated budget. These trials do not establish general impossibility.",
+    "The sign-modified polynomial D_E is an entry-signed determinant exactly when E is a cut, and an entry-signed permanent exactly when its complement is a cut. Triangle parity proves the criterion; clique restrictions provide permanent projections.",
+    "The complete simulation rerun reproduced all ten scientific result sections and the stored per-trial records exactly. I found no substantive error in the body’s stated proofs of Theorems 1–4 or Proposition 6."
+  ],
+  "contribution": {
+    "verdict": "new result",
+    "what_is_new": "The defensible additions are narrow: the graph-and-pivot-profile formulation, convergence proof for the specified protocol, and exact finite-field fibre and reachability computations. The determinant/permanent linear-symmetry contrast is classical, and the permanent half of Theorem 4 follows from an existing rectangular preserver theorem. The proposed generic-freezing question also has an omitted classical matrix-completion route. Priority of the sign-rule cut characterization remains less securely established.",
+    "closest_prior_work": [
+      {
+        "work": "Marcus and May (1962), The Permanent Function",
+        "identifier": "10.4153/CJM-1962-013-4",
+        "how_verified": "Identity checked independently through Crossref. Inspected the publisher PDF, including the theorem on p. 179: [full text](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FD9164EC8C97953476FBCE6BEAC5224D/S0008414X00017600a.pdf/div-class-title-the-permanent-function-div.pdf).",
+        "relation": "Their theorem covers linear transformations of rectangular matrices preserving permanental compounds. Taking two rows, compound order two, and identity action on the compound gives the permanent classification underlying Theorem 4."
+      },
+      {
+        "work": "Li and Pierce (2001), Linear Preserver Problems",
+        "identifier": "10.1080/00029890.2001.11919790",
+        "how_verified": "Identity checked through Crossref; inspected Theorems 1.1–1.2 in the accessible paper text: [paper](https://citeseerx.ist.psu.edu/document?doi=8f0a843aa7f9592128302e14e567cfc3a132be29&repid=rep1&type=pdf).",
+        "relation": "Documents the classical determinant-preserver classification and its extension to general fields. The manuscript supplies a local proof and network consequences, rather than a new underlying symmetry distinction."
+      },
+      {
+        "work": "Tiskin (2007), Communication-efficient parallel generic pairwise elimination",
+        "identifier": "10.1016/j.future.2006.04.017",
+        "how_verified": "Author, title, year, journal, volume and pages checked through Crossref. The repository PDF was inaccessible: [record](https://doi.org/10.1016/j.future.2006.04.017).",
+        "relation": "A directly relevant algorithmic antecedent for parallel pairwise elimination. An exact comparison of scheduling and communication assumptions remains unchecked."
+      },
+      {
+        "work": "Anderson and Rubin (1956), Statistical Inference in Factor Analysis",
+        "identifier": "OpenAlex W1748168094; Project Euclid euclid.bsmsp/1200511860",
+        "how_verified": "Identity checked through OpenAlex. Downloaded and inspected the original text, especially Theorem 5.1 on p. 118 and Theorem 5.7 on pp. 120–121: [full text](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf).",
+        "relation": "Missing cornerstone literature. Their row-deletion condition establishes uniqueness of a low-rank symmetric matrix from its off-diagonal entries. Its algebraic argument adapts directly to the manuscript’s generic permanent-pair rigidity question."
+      },
+      {
+        "work": "Drton, Sturmfels and Sullivant (2007), Algebraic factor analysis: tetrads, pentads and beyond",
+        "identifier": "10.1007/s00440-006-0033-2",
+        "how_verified": "Identity checked through Crossref. Inspected the arXiv full text, particularly the discussion and proof of Proposition 30: [full text](https://arxiv.org/pdf/math/0509390).",
+        "relation": "Provides the algebraic-geometric setting for symmetric low-rank matrices with unobserved diagonals, including uniqueness up to an orthogonal action. This is the relevant framework for the manuscript’s permanent fibres."
+      }
+    ],
+    "strongest_feasible_extension": "Replace the dimension-count conjecture with a quantitative finite-field rigidity theorem. Write S=xyᵀ+yxᵀ. For each coordinate i, find disjoint two-element sets I,J avoiding i with S[I,J] invertible; rank two forces S[i,i]=S[i,J]S[I,J]⁻¹S[I,i]. Recovering every diagonal forces the full symmetric product and hence only reciprocal scalings/exchanges. Adapt the classical proof, bound the exceptional probability as p grows, and test the certificate against the existing exhaustive fibre census. This would turn the measured trend into an explicit, checkable obstruction."
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "category": "missing-literature",
+      "location": "paper/PAPER.md:89 and 115",
+      "passage": "whether frozen pairs are generic for $n\\ge 5$ over large fields, which would turn the permanent's state-dependent rigidity from a measured trend into a theorem.",
+      "problem": "The proposed open question is a symmetric rank-two completion problem, but the manuscript omits classical identifiability results that supply a proof of its generic case. Counting equations alone also cannot distinguish one monomial orbit from several orbits of the same dimension.",
+      "evidence": "Anderson–Rubin, Theorem 5.1, p. 118, proves uniqueness under a row-deletion rank condition; identity verified as OpenAlex W1748168094 and the original supporting proof inspected. Here the observed pair forms are exactly the off-diagonal entries of S=xyᵀ+yxᵀ. For disjoint I,J of size two avoiding i, rank(S)=2 gives S[i,i]=S[i,J]S[I,J]⁻¹S[I,i]. Such blocks exist generically for n≥5. Thus every admissible replacement has the same full S and differs by an isometry of K, giving the manuscript’s monomial families. Running `python3 -B /tmp/determinants-referee-20261126/check_freezing.py` certified 19,200 pairs over F₃, with zero certified nonfrozen pairs, and checked 700 diagonal recoveries with zero errors. [Original source](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf).",
+      "repair": "Cite Anderson–Rubin and the algebraic factor-analysis literature, explicitly adapt the rank argument to the split form over odd-characteristic fields, and replace the conjectural generic statement with a proved sufficient condition and an exceptional-set bound.",
+      "confidence": "high"
+    },
+    {
+      "id": "F2",
+      "severity": "major",
+      "category": "correctness",
+      "location": "paper/PAPER.md:113",
+      "passage": "with a closed-form choice such as $r_j[c]/r_i[c]$, or have to be found by solving quadratic equations pair by pair, with the solutions thinning out as $n$ grows.",
+      "problem": "The claimed necessity of solving quadratic systems is false as stated. Quadratic equations define admissibility, but that does not preclude explicit rational update rules. The oracle experiments establish no computational lower bound for finding state-dependent moves.",
+      "evidence": "For n=3, put a=x₁y₂+x₂y₁, b=x₁y₃+x₃y₁ and c=x₂y₃+x₃y₂. Whenever b≠0, the closed-form replacement u=(1,c/b,0), v=(0,a,b) has pair permanents exactly (a,b,c), so it preserves the permanent for every completion and creates zeros using ordinary field arithmetic. Use the identity update when b=0 to obtain a policy defined everywhere. Running `python3 -B /tmp/determinants-referee-20261126/check_closed_form.py` checked this branch on 432, 12,000 and 98,784 pairs over F₃, F₅ and F₇ respectively, with zero errors.",
+      "repair": "Restrict the conclusion to the proved absence of nonmonomial universally linear moves. Distinguish the quadratic definition of a fibre from the complexity of finding its members, and acknowledge available closed-form state-dependent branches.",
+      "confidence": "high"
+    },
+    {
+      "id": "F3",
+      "severity": "major",
+      "category": "statistics",
+      "location": "paper/PAPER.md:91; Figure 1d; simulation/localsym.py:247–280",
+      "passage": "For the determinant this reproduces elimination, and these agents completed all 200 random matrices in every setting tested.",
+      "problem": "The determinant–permanent comparison changes the input population as well as the preserved polynomial. Determinant trials reject singular matrices; permanent trials retain singular matrices whenever their permanent is nonzero. The reported rates are valid for those separate populations, but they do not isolate the effect of the available moves on common inputs.",
+      "evidence": "`simulation/localsym.py:258–260` conditions acceptance on the selected polynomial. Instrumenting the same seeded n=6, p=3 run with `python3 -B /tmp/determinants-referee-20261126/greedy_audit.py` reproduced 94 completions and found 89 singular starts, of which 33 completed, versus 111 invertible starts, of which 61 completed. Thus the permanent completion rate on the common nonzero-determinant subset is 61/111≈55.0%, compared with the reported overall 94/200=47.0%.",
+      "repair": "Add a comparison using identical matrices conditioned on both determinant and permanent being nonzero, with paired contact schedules. Retain the present results as explicitly separate task-population success rates.",
+      "confidence": "high"
+    },
+    {
+      "id": "F4",
+      "severity": "minor",
+      "category": "abstract",
+      "location": "paper/PAPER.md:9",
+      "passage": "For the permanent we prove that the only linear maps of two rows preserving it in every matrix of size at least three are scalings and exchanges, against all of $\\mathrm{SL}_2$ for the determinant, so linear permanent-preserving agents never create a zero.",
+      "problem": "The abstract omits the essential characteristic restriction. Its unqualified finite-field statement is false in characteristic two, although the body correctly states the exception.",
+      "evidence": "Theorem 4 at line 69 assumes characteristic other than two; line 75 explicitly says that permanent equals determinant in characteristic two. Direct computation over F₂ sent A=[[1,1,0],[0,1,0],[0,0,1]] to the identity by r₁←r₁+r₂: both permanents were 1, while the number of zeros increased from five to six. The abstract contains 243 whitespace-delimited words, leaving room for the missing hypothesis.",
+      "repair": "Qualify the permanent-preserver statement with 'in characteristic other than two'.",
+      "confidence": "high"
+    },
+    {
+      "id": "F5",
+      "severity": "minor",
+      "category": "source-support",
+      "location": "claims.yaml:633–641",
+      "passage": "Algebraic complexity theory separates the determinant, computable by polynomial-size circuits, from the permanent, which is complete for Valiant's class VNP in characteristic other than two [@valiant1979classes; @burgisser2000]; computing the permanent of a 0-1 matrix is #P-complete [@valiant1979permanent].",
+      "problem": "The source-evidence record binds the wrong passage. `src-mulmuley` assigns Mulmuley–Sohoni’s abstract to the preceding Valiant-completeness claims, although the recorded inspection concerns reductive-group orbits.",
+      "evidence": "`claims.yaml:637` identifies `mulmuley2001`; line 635 contains the quoted passage, while line 641 describes the orbit-based approach. The independently retrieved abstract for DOI 10.1137/S009753970038715X concerns partially stable points and orbit neighborhoods. The matching manuscript sentence is the following geometric-complexity sentence at `paper/PAPER.md:21`. [Source record](https://doi.org/10.1137/S009753970038715X).",
+      "repair": "Rebind `src-mulmuley` to the geometric-complexity sentence. Preserve separate evidence records for the Valiant claims when their supporting passages are inspected.",
+      "confidence": "high"
+    }
+  ],
+  "checks_not_done": [
+    "Not every cited full text was inspected. In particular, Botta and Tiskin remained inaccessible; several background works, including the original Valiant papers, Bürgisser and Dieudonné, received registry identity checks without full-text support checks.",
+    "I did not exhaustively establish priority of Proposition 6 against multiparameter q-determinant literature. Tagawa’s 1993 work, DOI 10.3836/tjm/1270128486, was verified bibliographically and at abstract level, but its full text was inaccessible.",
+    "I did not classify unrestricted permanent reachability for n≥4 or certify every greedy failure as an indefinitely closed trap. Extending 60 non-fully-frozen n=6 failures by 10,000 contacts produced no completions, which still does not prove impossibility."
+  ]
+}

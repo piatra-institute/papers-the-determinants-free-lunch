@@ -1,0 +1,139 @@
+{
+  "verdicts": [
+    {
+      "finding_id": "codex:F1",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:91–97 cites the missing literature and replaces the conjecture with Theorem 6. The diagonal-recovery argument, split-form classification and union bounds are valid. The independent rerun reproduced every certificate result, including zero certified-but-unfrozen pairs."
+    },
+    {
+      "finding_id": "codex:F2",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:89 supplies the closed-form replacement: its three pair permanents are respectively a, b and c. Line 121 removes the claimed necessity of solving quadratic systems and correctly limits what the oracle experiments establish."
+    },
+    {
+      "finding_id": "codex:F3",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "simulation/localsym.py:371 implements shared starting matrices conditioned on both values being nonzero, with shared contact schedules. paper/PAPER.md:99 and Figure 1d report this paired design. The rerun reproduced determinant completions of 200 in every setting and permanent completions of 200, 200, 105, 164 and 87."
+    },
+    {
+      "finding_id": "codex:F4",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:9 now explicitly restricts the permanent linear-preserver statement to characteristic other than two. The abstract contains 248 whitespace-delimited words."
+    },
+    {
+      "finding_id": "codex:F5",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "claims.yaml:753 now binds src-mulmuley to the geometric-complexity sentence at paper/PAPER.md:21, rather than the Valiant-completeness passage."
+    }
+  ],
+  "new_problems": [
+    {
+      "id": "closure:N1",
+      "severity": "minor",
+      "location": "paper/PAPER.md:9, 75, 89, 93–95; claims.yaml",
+      "problem": "Numerical coverage remains incomplete for quantities in the model and mathematical prose, including newly added quantities.",
+      "evidence": "Examples introduced by the revision include 'From size five' in the abstract, 'creates two zeros' at line 89, and 'degree four' at line 95. No bound passage contains these statements. The complete remaining inventory is in claims_coverage; all 55 computation bindings themselves match the recorded results."
+    }
+  ],
+  "claims_coverage": {
+    "complete": false,
+    "unbound_numbers": [
+      "paper/PAPER.md:9: one row per agent; two rows per move, in both occurrences; probability one; characteristic other than two; size at least three; size five.",
+      "paper/PAPER.md:13: one row per agent and one neighbour per contact.",
+      "paper/PAPER.md:15: one row subtracted from another; two exchanged rows; one negated row; determinant multiplier one; two agents and their two rows.",
+      "paper/PAPER.md:19: replacement of two rows.",
+      "paper/PAPER.md:21: characteristic other than two and two rows acting alone.",
+      "paper/PAPER.md:25: characteristic other than two.",
+      "paper/PAPER.md:33: two leads; dimensions 2×2; determinant one.",
+      "paper/PAPER.md:37: one component per group factor.",
+      "paper/PAPER.md:39: two ordered bases.",
+      "paper/PAPER.md:45: rescaling one vector.",
+      "paper/PAPER.md:47: one component in the example and two components sharing a profile column.",
+      "paper/PAPER.md:49: probability one, in both conclusions.",
+      "paper/PAPER.md:51: two rows with the same lead; carrying one of those two rows; probability one.",
+      "paper/PAPER.md:63: replacement of two rows.",
+      "paper/PAPER.md:71: expansion along two rows.",
+      "paper/PAPER.md:73: field size at least 3; rank four; four independent forms; two partners; n≥3; three indices; one common matrix; two monomial families.",
+      "paper/PAPER.md:75: two rows; compound order two; dimension two; torus dimension one; characteristic two.",
+      "paper/PAPER.md:87: dimensions 2×2 of the pair permanents.",
+      "paper/PAPER.md:89: two zeros in the closed-form replacement.",
+      "paper/PAPER.md:91: characteristic other than two in the final sentence.",
+      "paper/PAPER.md:93: two elements in each certificate index set.",
+      "paper/PAPER.md:95: dimensions 3×3 and rank at most two; dimensions 2×2 and rank two; polynomial degree four.",
+      "paper/PAPER.md:97: n≥5 in the matrix-rigidity conclusion.",
+      "paper/PAPER.md:99: two rows and two leads in the policy description; one policy in the concluding limitation.",
+      "paper/PAPER.md:109: field order 2 in the cycle-space argument.",
+      "paper/PAPER.md:111: n≥3 in the Szegő statement and field order 2 in the computation description.",
+      "paper/PAPER.md:117: two rows per permitted move.",
+      "paper/PAPER.md:121: n≥5 in the first sentence and one greedy rule in the final sentence.",
+      "paper/PAPER.md:123: n≥4 in the remaining reachability question."
+    ],
+    "note": "Checked the entire manuscript, including written-out quantities. All experimental quantities are covered by computation or design passages; all 55 computation values reproduce with the specified scaling and rounding. The remaining gaps concern model counts, domain thresholds and proof quantities. Excluded numbering, identifiers, dates, structural names and algebraic coefficients/constants."
+  },
+  "source_claims": [
+    {
+      "claim_id": "src-zhang",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the journal abstract through OpenAlex and the [arXiv v1 text](https://arxiv.org/pdf/2401.05375v1), especially the definitions table and Error tolerance and Delayed Gratification sections. These support the attributed distributed policies, frozen elements, fault tolerance and temporary regressions. The journal full text was not inspected."
+    },
+    {
+      "claim_id": "src-levin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded [OSF file 7k32r](https://osf.io/7k32r/download) and read the abstract and Section 4, p. 16. They support the attributed free-lunch/interface interpretation and its connection to a latent space of patterns."
+    },
+    {
+      "claim_id": "src-dijkstra",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Dijkstra abstract](https://doi.org/10.1145/361179.361202) through OpenAlex. It explicitly describes maintaining the legitimate-state relation under distributed process steps. This verdict covers the Dijkstra clause; the other separately cited clauses in the bound passage are not supported by Dijkstra."
+    },
+    {
+      "claim_id": "src-mulmuley",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Mulmuley–Sohoni abstract](https://doi.org/10.1137/S009753970038715X) through OpenAlex. It reduces complexity lower-bound problems to questions concerning orbits of partially stable points in reductive-group representations, supporting the corrected passage."
+    },
+    {
+      "claim_id": "src-szego",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read p. 11 and the historical references in [McCuaig's published text](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i1r79/pdf). They state Pólya's signing question and Szegő's counterexample result for every n≥3. The original 1913 works were not inspected."
+    },
+    {
+      "claim_id": "src-vy-little",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the abstract and Section 1, statements 1.1–1.3, of [Robertson–Seymour–Thomas](https://arxiv.org/pdf/math/9911268), plus McCuaig's abstract and historical discussion. These support the signing/Pfaffian equivalence, Little's excluded central even subdivisions of K3,3, and polynomial-time recognition. McCuaig also supports the Kasteleyn attribution."
+    },
+    {
+      "claim_id": "src-marcus-may",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the definitions and main theorem on pp. 177–179 of the [publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FD9164EC8C97953476FBCE6BEAC5224D/S0008414X00017600a.pdf/div-class-title-the-permanent-function-div.pdf). The rectangular permanental-compound theorem applies with two rows, compound order two and identity action on the compound, supporting the stated antecedent."
+    },
+    {
+      "claim_id": "src-anderson-rubin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded the [Berkeley scan](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf) and read Lemma 5.1, Theorem 5.1 and its proof on pp. 118–119. They establish the stated row-deletion sufficient condition and identification up to an orthogonal transformation. The manuscript separately proves its extension to the split form in odd characteristic."
+    }
+  ],
+  "visual": {
+    "page_count": 14,
+    "pages_inspected": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+    "all_pages_inspected": true,
+    "problems": []
+  },
+  "contribution_after": {
+    "verdict": "new result",
+    "assessment": "The defensible additions are the graph/pivot-profile criterion, protocol convergence, exact fibre and reachability computations, and the explicit finite-field rigidity bound. The revision correctly credits the classical preserver and matrix-completion ingredients and establishes a concrete extension without claiming a complexity lower bound."
+  },
+  "summary": "All five referee findings are closed; minor claims-coverage gaps remain. The independent rerun reproduced all ten scientific result sections, per-trial records and the figure exactly. The three added references passed registry identity checks. The availability section is appropriate, no prohibited self-reference was found, and all pages passed visual inspection."
+}

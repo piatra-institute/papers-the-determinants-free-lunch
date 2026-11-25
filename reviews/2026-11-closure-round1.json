@@ -1,0 +1,143 @@
+{
+  "verdicts": [
+    {
+      "finding_id": "codex:F1",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:91–97 replaces the conjecture with Theorem 6, credits factor-analysis identifiability, and proves the certificate and exceptional-set bounds. The Schur-complement argument and degree-four union bound are sound. The scratch rerun reproduced every certificate result, including zero certified nonfrozen pairs. New-reference identities match [OpenAlex for Anderson–Rubin](https://api.openalex.org/works/W1748168094), [Crossref for Drton et al.](https://api.crossref.org/works/10.1007/s00440-006-0033-2), and [Crossref for Schwartz](https://api.crossref.org/works/10.1145/322217.322225). Supporting text was inspected in Anderson–Rubin Theorem 5.1, Drton et al. Proposition 30, and Schwartz Lemma 1/Corollary 1."
+    },
+    {
+      "finding_id": "codex:F2",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:89 supplies the rational replacement u=(1,c/b,0), v=(0,a,b), while line 121 removes the claimed necessity of quadratic solving and limits the oracle experiment's conclusion. Independent enumeration checked the replacement on 432, 12,000 and 98,784 eligible pairs over F3, F5 and F7, respectively, with zero errors."
+    },
+    {
+      "finding_id": "codex:F3",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:99 and simulation/localsym.py:371–409 use identical matrices conditioned on both polynomials being nonzero, and precompute the shared contact schedule before either trajectory runs. The scratch rerun reproduced determinant completion counts of 200 in all five settings and permanent counts of 200, 200, 105, 164 and 87. Figure 1d uses these paired results."
+    },
+    {
+      "finding_id": "codex:F4",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:9 now explicitly states 'In characteristic other than two'. The revised abstract contains 248 whitespace-delimited words."
+    },
+    {
+      "finding_id": "codex:F5",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "claims.yaml entry src-mulmuley now binds the geometric-complexity sentence at paper/PAPER.md:21. The independently retrieved abstract supports its statement about reductive-group orbits."
+    }
+  ],
+  "new_problems": [
+    {
+      "id": "closure:N1",
+      "severity": "minor",
+      "location": "claims.yaml; paper/PAPER.md:97,99",
+      "problem": "The added experiments still leave numerical quantities without their own bindings, including experimental sizes, field orders and the count of five settings.",
+      "evidence": "The cert-* entries bind measured counts and percentages, but not the experimental n and p values. The greedy entries do not bind 'five settings'. The manuscript-wide omissions are listed under claims_coverage. These are traceability gaps: the recorded results and independent rerun support the reported outcomes."
+    }
+  ],
+  "claims_coverage": {
+    "complete": false,
+    "unbound_numbers": [
+      "paper/PAPER.md:9 — field order 101; experimental size three/3×3 and field order 5 in the exhaustive permanent-reachability statement.",
+      "paper/PAPER.md:57 — exhaustive experimental dimensions 3×3 and 4×4, and field orders 2 and 3, including the repeated F2 setting.",
+      "paper/PAPER.md:59 — field order 101 and tested matrix sizes 4, 6, 8, 12 and 16.",
+      "paper/PAPER.md:59 — four conditions; 20 matrices per size; edge-deletion probability 0.3; two disconnected components; swap probability 1/2.",
+      "paper/PAPER.md:61 — three feasible conditions.",
+      "paper/PAPER.md:63 — field order 101 in the figure caption.",
+      "paper/PAPER.md:77 — experimental dimensions n=3, n=4 and n=2, and field orders 3, 5 and 2 wherever those settings are reported. The preserver-count bindings do not bind these distinct parameter quantities.",
+      "paper/PAPER.md:85 — census field orders p=3 and p=5, and tested dimensions n=3,4,5.",
+      "paper/PAPER.md:89 — n=3, dimension 3×3 and field order 5 in the census/reachability report; one reachability class per nonzero permanent value ('a single class').",
+      "paper/PAPER.md:89 — n=5, field order 5 and ten row pairs in the frozen-matrix experiment.",
+      "paper/PAPER.md:97 — exhaustive settings n=5 over F5 and n=6 over F3.",
+      "paper/PAPER.md:97 — sampled setting n=5 over F101 and random-matrix dimension 5×5 over F1009.",
+      "paper/PAPER.md:99 — five settings.",
+      "paper/PAPER.md:99 — experimental dimensions n=3,4,5,5,6 and the associated field orders 5,5,3,3.",
+      "paper/PAPER.md:109 — eight enumerated graphs on three vertices.",
+      "paper/PAPER.md:111 — tested size range n=3,…,7 and the repeated n=7 setting.",
+      "paper/PAPER.md:113 — numerical-check dimensions n=6 and n=7.",
+      "paper/PAPER.md:121 — repeated empirical progress statements at n=3, n=4 and n=5."
+    ],
+    "note": "Audited the whole manuscript, including its caption; there are no manuscript tables. All 55 computation entries have matching passages and agree with their result pointers, scales and rounding. Experimental dimensions, field orders and explicit spelled-out counts were treated as quantities; labels, citation locators, dates, mathematical identifiers and formula constants were excluded. Merely mentioning a parameter in another quantity's passage or evidence conditions does not bind that parameter."
+  },
+  "source_claims": [
+    {
+      "claim_id": "src-zhang",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the journal abstract through OpenAlex and the [arXiv v1 text](https://arxiv.org/pdf/2401.05375v1), especially the definitions table and Error tolerance and Delayed Gratification sections. These support the attributed distributed policies, frozen elements, fault tolerance and temporary regressions. The journal full text was not inspected."
+    },
+    {
+      "claim_id": "src-levin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded [OSF file 7k32r](https://osf.io/7k32r/download) and read the abstract and Section 4, p. 16. They support the attributed free-lunch/interface interpretation and its connection to a latent space of patterns."
+    },
+    {
+      "claim_id": "src-dijkstra",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Dijkstra abstract](https://doi.org/10.1145/361179.361202) through OpenAlex. It explicitly describes maintaining the legitimate-state relation under distributed process steps. This verdict covers the Dijkstra clause; the other separately cited clauses in the bound passage are not supported by Dijkstra."
+    },
+    {
+      "claim_id": "src-mulmuley",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Mulmuley–Sohoni abstract](https://doi.org/10.1137/S009753970038715X) through OpenAlex. It reduces complexity lower-bound problems to questions concerning orbits of partially stable points in reductive-group representations, supporting the corrected passage."
+    },
+    {
+      "claim_id": "src-szego",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read p. 11 and the historical references in [McCuaig's published text](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i1r79/pdf). They state Pólya's signing question and Szegő's counterexample result for every n≥3. The original 1913 works were not inspected."
+    },
+    {
+      "claim_id": "src-vy-little",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the abstract and Section 1, statements 1.1–1.3, of [Robertson–Seymour–Thomas](https://arxiv.org/pdf/math/9911268), plus McCuaig's abstract and historical discussion. These support the signing/Pfaffian equivalence, Little's excluded central even subdivisions of K3,3, and polynomial-time recognition. McCuaig also supports the Kasteleyn attribution."
+    },
+    {
+      "claim_id": "src-marcus-may",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the definitions and main theorem on pp. 177–179 of the [publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FD9164EC8C97953476FBCE6BEAC5224D/S0008414X00017600a.pdf/div-class-title-the-permanent-function-div.pdf). The rectangular permanental-compound theorem applies with two rows, compound order two and identity action on the compound, supporting the stated antecedent."
+    },
+    {
+      "claim_id": "src-anderson-rubin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded the [Berkeley scan](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf) and read Lemma 5.1, Theorem 5.1 and its proof on pp. 118–119. They establish the stated row-deletion sufficient condition and identification up to an orthogonal transformation. The manuscript separately proves its extension to the split form in odd characteristic."
+    }
+  ],
+  "visual": {
+    "page_count": 14,
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "all_pages_inspected": true,
+    "problems": []
+  },
+  "contribution_after": {
+    "verdict": "new result",
+    "assessment": "The defensible additions are the graph/pivot-profile reachability characterization, exact finite-field computations, and the permanent-pair rigidity certificate with explicit exceptional-set bounds. The underlying preserver classifications and matrix-completion method are classical and are now appropriately credited; novelty lies in these specific consequences and their combination."
+  },
+  "summary": "All five referee findings are closed. The independent rerun reproduced all ten scientific result sections and all 400 stored trial records. All eight source claims are supported, the three new references were verified, and all pages passed visual inspection. Numerical binding coverage remains incomplete. The availability section is appropriate, and no prohibited self-reference was found."
+}

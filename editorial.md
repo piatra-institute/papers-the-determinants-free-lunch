@@ -1,6 +1,6 @@
 # Editorial record
 
-Status: author's v1; independent review pending.
+Status: revision round 1 (2026-11-26) after the Codex referee report; independent review pending.
 
 ## Contribution and reader
 
@@ -13,8 +13,8 @@ For readers in algebraic complexity, distributed computing and the "basal intell
 3. Theorems 1-3 with proofs: orbits, readability, almost-sure completion.
 4. Checks: exhaustive enumeration and randomised trials; Figure 1.
 5. Theorem 4 (pair-local preservers, SL_2 vs monomial) with proof, exhaustive search, Corollary 5.
-6. State-dependent moves: det unchanged; permanent fibres, frozen pairs, exhaustive n = 3 reachability, greedy agents.
-7. Sign-rule faults: Proposition 6 (cuts), relation to Pólya-Szegő and Pfaffian orientations, clique projection.
+6. State-dependent moves: det unchanged; permanent fibres, frozen pairs, exhaustive n = 3 reachability with a closed-form branch, Theorem 6 (rank-two rigidity, adapted from Anderson and Rubin) with exhaustive and seeded checks, paired greedy agents.
+7. Sign-rule faults: Proposition 7 (cuts), relation to Pólya-Szegő and Pfaffian orientations, clique projection.
 8. Discussion: what the free lunch is, its costs, the limit of the no-go, VP vs VNP not addressed, open questions.
 
 ## Strongest rival
@@ -27,3 +27,13 @@ The results restate Gaussian elimination and the classical global preserver theo
 - Sign-defect section kept short (owner instruction) and credits Pólya-Szegő, Kasteleyn, Little, Vazirani-Yannakakis, Robertson-Seymour-Thomas and McCuaig.
 - Open: Botta and Marcus-May full texts not inspected; the dimension-count remark on frozen pairs is unproved and labelled so.
 - Pending independent review: claims coverage, source verdicts, editorial and visual review records.
+
+## Round 1 decisions (2026-11-26)
+
+- codex:F1: replaced the dimension-count conjecture with Theorem 6 (certificate via invertible S[I,J] blocks of S = xy^T + yx^T; frozen; Schwartz bound 4n/p per pair). Cited Anderson and Rubin (Theorem 5.1, p. 118), Drton, Sturmfels and Sullivant, and Schwartz. Exhaustive soundness check and seeded large-field checks added to the recorded run.
+- codex:F2: removed the claim that permanent moves must be found by solving quadratic equations; added the closed-form n = 3 branch; stated that oracle experiments are not a computational lower bound.
+- codex:F3: greedy experiment redesigned as a paired comparison on the same matrices (det != 0 and perm != 0) with the same contact schedule; re-recorded.
+- codex:F4: abstract now states the characteristic restriction.
+- codex:F5: src-mulmuley rebound to the geometric-complexity sentence.
+- Acknowledged that the permanent half of Theorem 4 is the two-row, order-two case of the Marcus and May compound theorem (p. 179, read in full).
+- Sign-rule proposition renumbered to Proposition 7.

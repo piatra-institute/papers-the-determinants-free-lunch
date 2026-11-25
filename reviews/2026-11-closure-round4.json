@@ -1,0 +1,109 @@
+{
+  "verdicts": [
+    {
+      "finding_id": "codex:F1",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:91–97 replaces the dimension-count conjecture with classical attribution and a valid Schur-complement proof of Theorem 6. The polynomial nonvanishing argument and union bounds establish the stated exceptional probabilities. The rerun reproduced every certificate result. The three added references match [OpenAlex](https://api.openalex.org/works/W1748168094) and Crossref records for [Drton et al.](https://api.crossref.org/works/10.1007/s00440-006-0033-2) and [Schwartz](https://api.crossref.org/works/10.1145/322217.322225). Drton's abstract and Proposition 30, and the retrieved Schwartz Lemma 1/Corollary 1 text, support their uses."
+    },
+    {
+      "finding_id": "codex:F2",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:89 supplies the explicit rational replacement u=(1,c/b,0), v=(0,a,b); substitution gives pair permanents (a,b,c). Lines 121–123 remove the alleged necessity of solving quadratic systems and restrict the conclusions to the proved rigidity and observed policy performance."
+    },
+    {
+      "finding_id": "codex:F3",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "simulation/localsym.py:371–410 now rejects inputs unless both values are nonzero, copies the same initial matrix for both policies, and shares the contact schedule. paper/PAPER.md:99 and Figure 1d describe this paired population. The rerun reproduced determinant completions of 200/200 throughout and permanent completions of 200, 200, 105, 164 and 87 out of 200."
+    },
+    {
+      "finding_id": "codex:F4",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:9 now explicitly introduces the permanent linear-preserver statement with 'In characteristic other than two'. The abstract contains 248 whitespace-delimited words."
+    },
+    {
+      "finding_id": "codex:F5",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "claims.yaml:753–761 binds src-mulmuley to the geometric-complexity sentence about reductive-group orbits at paper/PAPER.md:21. It no longer assigns that source to the Valiant-completeness passage."
+    }
+  ],
+  "new_problems": [
+    {
+      "id": "closure:N1",
+      "severity": "major",
+      "location": "metadata.yaml:17, newly added web_blurb",
+      "problem": "The website blurb overstates the extension by saying that the permanent offers almost no corresponding moves once matrices reach size five, without the essential large-field qualification.",
+      "evidence": "Theorem 6 at paper/PAPER.md:93 bounds the exceptional pair fraction by 4n/p; line 97 requires p large compared with n^3 for the matrix-level conclusion. At n=5 over F_3, results.json records only 30,720 of 58,080 independent pairs as frozen, and the paired permanent policy completes 164/200 matrices. These reproduced results do not support a size-five-only threshold. The blurb should state the large-field regime and probabilistic scope."
+    }
+  ],
+  "claims_coverage": {
+    "complete": true,
+    "unbound_numbers": [],
+    "note": "Audited the entire manuscript, including the abstract and figure caption, using passage spans and an independent numeral/number-word scan. Every in-scope quantity is bound; the remaining uncovered tokens are citation locators or mathematical identifiers excluded by the instructions. All 55 computation claims match their result-file pointers, scales and rounding, and all bound passages occur in the manuscript."
+  },
+  "source_claims": [
+    {
+      "claim_id": "src-zhang",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the journal abstract through OpenAlex and the [arXiv v1 text](https://arxiv.org/pdf/2401.05375v1), especially the definitions table and Error tolerance and Delayed Gratification sections. These support the attributed distributed policies, frozen elements, fault tolerance and temporary regressions. The journal full text was not inspected."
+    },
+    {
+      "claim_id": "src-levin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded [OSF file 7k32r](https://osf.io/7k32r/download) and read the abstract and Section 4, p. 16. They support the attributed free-lunch/interface interpretation and its connection to a latent space of patterns."
+    },
+    {
+      "claim_id": "src-dijkstra",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Dijkstra abstract](https://doi.org/10.1145/361179.361202) through OpenAlex. It explicitly describes maintaining the legitimate-state relation under distributed process steps. This verdict covers the Dijkstra clause; the other separately cited clauses in the bound passage are not supported by Dijkstra."
+    },
+    {
+      "claim_id": "src-mulmuley",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Mulmuley–Sohoni abstract](https://doi.org/10.1137/S009753970038715X) through OpenAlex. It reduces complexity lower-bound problems to questions concerning orbits of partially stable points in reductive-group representations, supporting the corrected passage."
+    },
+    {
+      "claim_id": "src-szego",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read p. 11 and the historical references in [McCuaig's published text](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i1r79/pdf). They state Pólya's signing question and Szegő's counterexample result for every n≥3. The original 1913 works were not inspected."
+    },
+    {
+      "claim_id": "src-vy-little",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the abstract and Section 1, statements 1.1–1.3, of [Robertson–Seymour–Thomas](https://arxiv.org/pdf/math/9911268), plus McCuaig's abstract and historical discussion. These support the signing/Pfaffian equivalence, Little's excluded central even subdivisions of K3,3, and polynomial-time recognition. McCuaig also supports the Kasteleyn attribution."
+    },
+    {
+      "claim_id": "src-marcus-may",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the definitions and main theorem on pp. 177–179 of the [publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FD9164EC8C97953476FBCE6BEAC5224D/S0008414X00017600a.pdf/div-class-title-the-permanent-function-div.pdf). The rectangular permanental-compound theorem applies with two rows, compound order two and identity action on the compound, supporting the stated antecedent."
+    },
+    {
+      "claim_id": "src-anderson-rubin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded the [Berkeley scan](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf) and read Lemma 5.1, Theorem 5.1 and its proof on pp. 118–119. They establish the stated row-deletion sufficient condition and identification up to an orthogonal transformation. The manuscript separately proves its extension to the split form in odd characteristic."
+    }
+  ],
+  "visual": {
+    "page_count": 14,
+    "pages_inspected": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+    "all_pages_inspected": true,
+    "problems": []
+  },
+  "contribution_after": {
+    "verdict": "new result",
+    "assessment": "The defensible additions are narrow: graph-dependent reachability and protocol convergence, exact finite-field computations, and an explicit rigidity certificate with exceptional-set bounds. The revision correctly attributes the classical preserver results and factor-analysis argument; its contribution lies in their local-network consequences and quantitative finite-field formulation."
+  },
+  "summary": "All five referee findings are closed. The full rerun passed nine tests and exactly reproduced all ten scientific result sections, per-trial records and the figure. All eight inherited source verdicts are preserved unchanged. Numerical coverage and visual review pass; the availability section is appropriate and no prohibited self-reference was found. One major overclaim remains in the newly added website blurb."
+}

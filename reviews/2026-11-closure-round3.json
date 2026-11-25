@@ -1,0 +1,138 @@
+{
+  "verdicts": [
+    {
+      "finding_id": "codex:F1",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:91–97 replaces the dimension-count conjecture with an attributed completion argument, a proved certificate, and explicit exceptional-probability bounds. The Schur-complement and split-form arguments are valid. The rerun reproduced every certificate result, including zero certified-but-nonfrozen pairs. Added reference identities match [OpenAlex](https://api.openalex.org/works/W1748168094) and the Crossref records for [Drton et al.](https://api.crossref.org/works/10.1007/s00440-006-0033-2) and [Schwartz](https://api.crossref.org/works/10.1145/322217.322225)."
+    },
+    {
+      "finding_id": "codex:F2",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:89 supplies the explicit rational replacement; line 121 removes the claim that quadratic-system solving is necessary and correctly limits what the oracle experiment establishes. Independent enumeration checked the replacement on 432, 12,000 and 98,784 eligible pairs over F₃, F₅ and F₇, respectively, with zero errors."
+    },
+    {
+      "finding_id": "codex:F3",
+      "severity": "major",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:99 and Figure 1d now compare identical matrices conditioned on both invariants being nonzero. simulation/localsym.py:379–397 generates one initial matrix and contact schedule for both runs. The rerun reproduced determinant completions of 200 in every setting and permanent completions of 200, 200, 105, 164 and 87. The confounded rates have been replaced."
+    },
+    {
+      "finding_id": "codex:F4",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "paper/PAPER.md:9 now explicitly qualifies the linear-preserver statement with “In characteristic other than two.” The revised abstract contains 248 whitespace-delimited words."
+    },
+    {
+      "finding_id": "codex:F5",
+      "severity": "minor",
+      "verdict": "closed",
+      "evidence": "claims.yaml:src-mulmuley now binds the geometric-complexity sentence at paper/PAPER.md:21 about reductive-group orbits. It no longer binds the preceding Valiant-completeness passage. The unchanged previous source verdict supports this corrected binding."
+    }
+  ],
+  "new_problems": [
+    {
+      "id": "closure:N1",
+      "severity": "minor",
+      "location": "paper/PAPER.md:93–95; claims.yaml:thm-rigidity",
+      "problem": "The new theorem's quantitative prose is incompletely bound. Additional unbound written-out counts remain elsewhere in the manuscript.",
+      "evidence": "thm-rigidity binds only the theorem's opening hypothesis, excluding the certificate's set cardinality and the proof's rank and degree statements. The complete remaining prose-count inventory is listed in claims_coverage. These are ledger omissions; all 55 computation claims match the recorded results."
+    }
+  ],
+  "claims_coverage": {
+    "complete": false,
+    "unbound_numbers": [
+      "paper/PAPER.md:93 — “two-element sets”: two elements in each certificate set.",
+      "paper/PAPER.md:95 — “rank at most two”.",
+      "paper/PAPER.md:95 — “one choice” of I and J for each coordinate.",
+      "paper/PAPER.md:95 — “degree four”.",
+      "paper/PAPER.md:95 — “the two estimates”.",
+      "paper/PAPER.md:99 — “their two rows”.",
+      "paper/PAPER.md:99 — “the two leads”.",
+      "paper/PAPER.md:99 — “one policy”.",
+      "paper/PAPER.md:109 — “modulo two”.",
+      "paper/PAPER.md:113 — “the two polynomials”.",
+      "paper/PAPER.md:117 — “map of two rows”.",
+      "paper/PAPER.md:121 — “one greedy rule”.",
+      "paper/PAPER.md:123 — “Two questions remain open”."
+    ],
+    "note": "Reviewed the entire manuscript, including the abstract and figure caption; there are no manuscript tables. All empirical numerals and experimental settings are bound, all claim passages match, and all 55 computation bindings resolve to matching values. Remaining omissions are written-out prose counts. Labels, dates, names, mathematical-expression constants and nonquantitative uses of “one” were excluded."
+  },
+  "source_claims": [
+    {
+      "claim_id": "src-zhang",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the journal abstract through OpenAlex and the [arXiv v1 text](https://arxiv.org/pdf/2401.05375v1), especially the definitions table and Error tolerance and Delayed Gratification sections. These support the attributed distributed policies, frozen elements, fault tolerance and temporary regressions. The journal full text was not inspected."
+    },
+    {
+      "claim_id": "src-levin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded [OSF file 7k32r](https://osf.io/7k32r/download) and read the abstract and Section 4, p. 16. They support the attributed free-lunch/interface interpretation and its connection to a latent space of patterns."
+    },
+    {
+      "claim_id": "src-dijkstra",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Dijkstra abstract](https://doi.org/10.1145/361179.361202) through OpenAlex. It explicitly describes maintaining the legitimate-state relation under distributed process steps. This verdict covers the Dijkstra clause; the other separately cited clauses in the bound passage are not supported by Dijkstra."
+    },
+    {
+      "claim_id": "src-mulmuley",
+      "verdict": "supported",
+      "depth": "abstract",
+      "note": "Read the [Mulmuley–Sohoni abstract](https://doi.org/10.1137/S009753970038715X) through OpenAlex. It reduces complexity lower-bound problems to questions concerning orbits of partially stable points in reductive-group representations, supporting the corrected passage."
+    },
+    {
+      "claim_id": "src-szego",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read p. 11 and the historical references in [McCuaig's published text](https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i1r79/pdf). They state Pólya's signing question and Szegő's counterexample result for every n≥3. The original 1913 works were not inspected."
+    },
+    {
+      "claim_id": "src-vy-little",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the abstract and Section 1, statements 1.1–1.3, of [Robertson–Seymour–Thomas](https://arxiv.org/pdf/math/9911268), plus McCuaig's abstract and historical discussion. These support the signing/Pfaffian equivalence, Little's excluded central even subdivisions of K3,3, and polynomial-time recognition. McCuaig also supports the Kasteleyn attribution."
+    },
+    {
+      "claim_id": "src-marcus-may",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Read the definitions and main theorem on pp. 177–179 of the [publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FD9164EC8C97953476FBCE6BEAC5224D/S0008414X00017600a.pdf/div-class-title-the-permanent-function-div.pdf). The rectangular permanental-compound theorem applies with two rows, compound order two and identity action on the compound, supporting the stated antecedent."
+    },
+    {
+      "claim_id": "src-anderson-rubin",
+      "verdict": "supported",
+      "depth": "fulltext",
+      "note": "Downloaded the [Berkeley scan](https://digicoll.lib.berkeley.edu/record/112877/files/math_s3_v5_article-08.pdf) and read Lemma 5.1, Theorem 5.1 and its proof on pp. 118–119. They establish the stated row-deletion sufficient condition and identification up to an orthogonal transformation. The manuscript separately proves its extension to the split form in odd characteristic."
+    }
+  ],
+  "visual": {
+    "page_count": 14,
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "all_pages_inspected": true,
+    "problems": []
+  },
+  "contribution_after": {
+    "verdict": "new result",
+    "assessment": "The defensible additions are the graph/pivot-profile characterization, convergence analysis, exact finite-field reachability computations, and quantitative rigidity certificate. The revision appropriately attributes the classical preserver and completion mechanisms; its contribution lies in their precise network consequences and finite-field bounds, not a new determinant–permanent complexity separation."
+  },
+  "summary": "All five referee findings are closed. The independent rerun reproduced all ten scientific result sections and per-trial records, with nine tests passing. No new blocker or major problem was found; minor claims-ledger omissions remain. All pages passed visual inspection, and the availability statement and self-reference checks passed. All eight previous source verdicts are retained unchanged."
+}

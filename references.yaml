@@ -197,3 +197,34 @@ references:
   genre: Preprint, version 3
   issued: {date-parts: [[2025]]}
   DOI: 10.31234/osf.io/5g2xj_v3
+- id: anderson1956
+  type: paper-conference
+  author: [{family: Anderson, given: T. W.}, {family: Rubin, given: Herman}]
+  title: Statistical inference in factor analysis
+  container-title: Proceedings of the Third Berkeley Symposium on Mathematical Statistics and Probability
+  volume: 5
+  page: 111-150
+  publisher: University of California Press
+  publisher-place: Berkeley
+  issued: {date-parts: [[1956]]}
+  URL: http://projecteuclid.org/euclid.bsmsp/1200511860
+- id: drton2007
+  type: article-journal
+  author: [{family: Drton, given: Mathias}, {family: Sturmfels, given: Bernd}, {family: Sullivant, given: Seth}]
+  title: 'Algebraic factor analysis: Tetrads, pentads and beyond'
+  container-title: Probability Theory and Related Fields
+  volume: 138
+  issue: 3-4
+  page: 463-493
+  issued: {date-parts: [[2007]]}
+  DOI: 10.1007/s00440-006-0033-2
+- id: schwartz1980
+  type: article-journal
+  author: [{family: Schwartz, given: J. T.}]
+  title: Fast probabilistic algorithms for verification of polynomial identities
+  container-title: Journal of the ACM
+  volume: 27
+  issue: 4
+  page: 701-717
+  issued: {date-parts: [[1980]]}
+  DOI: 10.1145/322217.322225

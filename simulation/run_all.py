@@ -96,29 +96,32 @@ def figure(res, path):
     a.set_title("(b) Time to completion")
     a = ax[1, 0]
     F = res["fibres"]
+    C = res["certificate"]
     for p, c in ((3, "#1f5fa8"), (5, "#c0392b")):
-        ks = [k for k in F if F[k]["p"] == p]
+        ks = sorted([k for k in F if F[k]["p"] == p], key=lambda k: F[k]["n"])
         ns = [F[k]["n"] for k in ks]
         fr = [F[k]["perm_fibre_equals_orbit_independent"] / F[k]["independent_pairs"] for k in ks]
-        a.plot(ns, fr, "o-", color=c, lw=2, ms=8, label=f"permanent, $p={p}$")
-    a.axhline(1.0, color="#555555", ls="--", lw=1.5, label="determinant (all pairs)")
-    a.set_xticks([3, 4, 5])
-    a.set_ylim(-0.05, 1.3)
+        a.plot(ns, fr, "o-", color=c, lw=2, ms=8, label=f"frozen, $p={p}$")
+        ce = [C[f"exhaustive_n{F[k]['n']}_p{p}"]["certified"] / F[k]["independent_pairs"]
+              if f"exhaustive_n{F[k]['n']}_p{p}" in C else 0.0 for k in ks]
+        a.plot(ns, ce, "s--", color=c, lw=1.5, ms=7, label=f"certified, $p={p}$")
+    a.axhline(1.0, color="#555555", ls=":", lw=1.5, label="determinant (all pairs)")
+    a.set_xticks([3, 4, 5, 6])
+    a.set_ylim(-0.05, 1.75)
     a.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
     a.set_xlabel("matrix size $n$")
     a.set_ylabel("share of independent pairs")
     a.set_title("(c) Permanent pairs with no extra moves")
-    a.legend(frameon=False, loc="lower right")
+    a.legend(frameon=False, loc="upper left", ncol=2, fontsize=11)
     a = ax[1, 1]
-    G = res["greedy"]
+    G = res["greedy_paired"]
     keys = [("3", 5), ("4", 5), ("5", 5), ("5", 3), ("6", 3)]
     xl, dv, pv = [], [], []
     for n, p in keys:
-        d = G[f"det_n{n}_p{p}"]
-        q = G[f"perm_n{n}_p{p}"]
+        g = G[f"n{n}_p{p}"]
         xl.append(f"$n={n}$\n$p={p}$")
-        dv.append(d["completed"] / d["trials"])
-        pv.append(q["completed"] / q["trials"])
+        dv.append(g["det"]["completed"] / g["trials"])
+        pv.append(g["perm"]["completed"] / g["trials"])
     x = np.arange(len(keys))
     a.bar(x - 0.2, dv, 0.4, color="#1f5fa8", label="determinant-preserving")
     a.bar(x + 0.2, pv, 0.4, color="#d08c2b", label="permanent-preserving")
@@ -127,7 +130,7 @@ def figure(res, path):
     a.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
     a.set_ylabel("fraction reaching readable form")
     a.legend(frameon=False, loc="upper right")
-    a.set_title("(d) Greedy agents, all value-preserving moves")
+    a.set_title("(d) Greedy agents, same matrices")
     fig.tight_layout()
     fig.savefig(path, dpi=200)
     plt.close(fig)
@@ -167,7 +170,7 @@ def main():
     res["linear_preservers"] = lp
     # 4. fibres of the pair maps (state-dependent moves)
     fib, frozen = {}, {}
-    for n, p in ((3, 3), (3, 5), (4, 3), (4, 5), (5, 3), (5, 5)):
+    for n, p in ((3, 3), (3, 5), (4, 3), (4, 5), (5, 3), (5, 5), (6, 3)):
         r, lk = localsym.fibre_census(n, p)
         fib[f"n{n}_p{p}"] = r
         if n == 5:
@@ -180,12 +183,19 @@ def main():
         for name, E in (("complete", ((0, 1), (0, 2), (1, 2))), ("path", ((0, 1), (1, 2)))):
             reach[f"p{p}_{name}"] = localsym.state_dependent_reachability(p, E)
     res["reach_n3"] = reach
-    # 6. greedy agents with oracle access to every value-preserving pair move
+    # 6. greedy agents with oracle access to every value-preserving pair move, paired design
     gr = {}
     for n, p in ((3, 5), (4, 5), (5, 5), (5, 3), (6, 3)):
-        for kind in ("det", "perm"):
-            gr[f"{kind}_n{n}_p{p}"] = localsym.greedy_trials(n, p, kind, trials=200, budget=3000, seed=11 + n + p)
-    res["greedy"] = gr
+        gr[f"n{n}_p{p}"] = localsym.greedy_paired(n, p, trials=200, budget=3000, seed=11 + n + p)
+    res["greedy_paired"] = gr
+    # 6b. rank-two rigidity certificate: exhaustive soundness check and seeded large-field shares
+    cert = {}
+    for n, p in ((5, 3), (5, 5), (6, 3)):
+        cert[f"exhaustive_n{n}_p{p}"] = localsym.certificate_exhaustive(n, p)
+    cert["sampled_n5_p101"] = localsym.certificate_sampled(5, 101, 200000, seed=3)
+    cert["sampled_n6_p1009"] = localsym.certificate_sampled(6, 1009, 200000, seed=4)
+    cert["sampled_n5_p1009"] = localsym.certificate_sampled(5, 1009, 100000, seed=5, matrices=20000)
+    res["certificate"] = cert
     # 7. sign-rule census
     rng = np.random.default_rng(5)
     res["sign_census"] = {f"n{n}": signrule.census(n) for n in range(3, 8)}

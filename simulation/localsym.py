@@ -278,3 +278,132 @@ def greedy_trials(n, p, kind, trials, budget, seed, oracle=None):
             contacts.append(t_done)
     return {"n": n, "p": p, "kind": kind, "trials": trials, "budget": budget, "seed": seed,
             "completed": done, "median_contacts": float(np.median(contacts)) if contacts else None}
+
+
+# ---------------------------------------------------------------- rank-two rigidity certificate
+
+def certificate_options(n):
+    """For each coordinate i, all ordered pairs (I, J) of disjoint 2-sets avoiding i (needs n >= 5)."""
+    opts = []
+    for i in range(n):
+        rest = [k for k in range(n) if k != i]
+        cand = []
+        for I in combinations(rest, 2):
+            for J in combinations([k for k in rest if k not in I], 2):
+                if I < J:
+                    cand.append((I, J))
+        opts.append(cand)
+    return opts
+
+
+def offdiag_index(n):
+    idx = {}
+    for k, (s, t) in enumerate(combinations(range(n), 2)):
+        idx[(s, t)] = idx[(t, s)] = k
+    return idx
+
+
+def certified(F, n, p):
+    """F: (..., n(n-1)/2) pair permanents = off-diagonal entries of S = x y^T + y x^T.
+    A pair is certified when every i has disjoint 2-sets I, J avoiding i with S[I,J] invertible."""
+    idx = offdiag_index(n)
+    ok = np.ones(F.shape[:-1], dtype=bool)
+    for i, cand in enumerate(certificate_options(n)):
+        has = np.zeros(F.shape[:-1], dtype=bool)
+        for (a, b), (c, d) in cand:
+            det = (F[..., idx[(a, c)]] * F[..., idx[(b, d)]] - F[..., idx[(a, d)]] * F[..., idx[(b, c)]]) % p
+            has |= det != 0
+        ok &= has
+    return ok
+
+
+def certificate_exhaustive(n, p):
+    """Exhaustive over all pairs: certified pairs must be frozen (fibre = monomial orbit)."""
+    V = all_vectors(2 * n, p)
+    F = pair_forms(V, n, p, "perm")
+    indep = keys_of(pair_forms(V, n, p, "det"), p) != 0
+    pk = keys_of(F, p)
+    _, inv_p, cnt_p = np.unique(pk, return_inverse=True, return_counts=True)
+    frozen = (cnt_p[inv_p] == 2 * (p - 1)) & indep
+    cert = certified(F, n, p)
+    return {"n": n, "p": p, "independent_pairs": int(indep.sum()), "frozen": int(frozen.sum()),
+            "certified": int(cert.sum()), "certified_not_frozen": int((cert & ~frozen).sum()),
+            "certified_dependent": int((cert & ~indep).sum())}
+
+
+def certificate_sampled(n, p, samples, seed, matrices=0):
+    """Seeded check at large p: certified share of uniform pairs against the bound 1 - 4n/p, and
+    the diagonal-recovery identity S_ii = S[i,J] S[I,J]^{-1} S[I,i] on certified coordinates."""
+    rng = np.random.default_rng(seed)
+    X = rng.integers(0, p, size=(samples, n))
+    Y = rng.integers(0, p, size=(samples, n))
+    F = pair_forms(np.concatenate([X, Y], axis=1), n, p, "perm")
+    cert = certified(F, n, p)
+    idx = offdiag_index(n)
+    errors = checked = 0
+    for s in np.flatnonzero(cert)[:2000]:
+        for i, cand in enumerate(certificate_options(n)):
+            for (a, b), (c, d) in cand:
+                det = (F[s, idx[(a, c)]] * F[s, idx[(b, d)]] - F[s, idx[(a, d)]] * F[s, idx[(b, c)]]) % p
+                if det:
+                    dinv = pow(int(det), p - 2, p)
+                    M = [[int(F[s, idx[(a, c)]]), int(F[s, idx[(a, d)]])], [int(F[s, idx[(b, c)]]), int(F[s, idx[(b, d)]])]]
+                    Minv = [[M[1][1] * dinv % p, -M[0][1] * dinv % p], [-M[1][0] * dinv % p, M[0][0] * dinv % p]]
+                    row = [int(F[s, idx[(i, c)]]), int(F[s, idx[(i, d)]])]
+                    col = [int(F[s, idx[(a, i)]]), int(F[s, idx[(b, i)]])]
+                    val = sum(row[r] * Minv[r][k] * col[k] for r in range(2) for k in range(2)) % p
+                    errors += val != (2 * X[s, i] * Y[s, i]) % p
+                    checked += 1
+                    break
+    out = {"n": n, "p": p, "samples": samples, "seed": seed, "certified": int(cert.sum()),
+           "bound_share": 1 - 4 * n / p, "diagonal_checks": checked, "diagonal_errors": errors}
+    if matrices:
+        A = rng.integers(0, p, size=(matrices, n, n))
+        allc = np.ones(matrices, dtype=bool)
+        for i, j in combinations(range(n), 2):
+            Fm = pair_forms(np.concatenate([A[:, i, :], A[:, j, :]], axis=1), n, p, "perm")
+            allc &= certified(Fm, n, p)
+        out.update({"matrices": matrices, "matrices_all_pairs_certified": int(allc.sum()),
+                    "matrix_bound_share": 1 - (n * (n - 1) // 2) * 4 * n / p})
+    return out
+
+
+def greedy_paired(n, p, trials, budget, seed):
+    """Same matrices (det != 0 and perm != 0) and the same contact schedule for both polynomials."""
+    from fieldlin import det_gauss, perm_leibniz
+    orc = {k: FibreOracle(n, p, k) for k in ("det", "perm")}
+    rng = np.random.default_rng(seed)
+    pairs = list(combinations(range(n), 2))
+    out = {k: {"completed": 0, "contacts": []} for k in ("det", "perm")}
+    started = 0
+    while started < trials:
+        A0 = rng.integers(0, p, size=(n, n))
+        if det_gauss(A0.tolist(), p) == 0 or perm_leibniz(A0.tolist(), p) == 0:
+            continue
+        started += 1
+        sched = rng.integers(len(pairs), size=budget)
+        tie_seed = int(rng.integers(2 ** 31))
+        for kind in ("det", "perm"):
+            A = A0.copy()
+            tie = np.random.default_rng(tie_seed)
+            v0 = det_gauss(A.tolist(), p) if kind == "det" else perm_leibniz(A.tolist(), p)
+            t_done = 0 if readable_mask(A[None])[0] else None
+            for t in range(budget):
+                if t_done is not None:
+                    break
+                i, j = pairs[sched[t]]
+                best, _ = orc[kind].best_moves(A[i], A[j])
+                m = orc[kind].V[best[tie.integers(len(best))]].astype(np.int64)
+                A[i], A[j] = m[:n], m[n:]
+                if readable_mask(A[None])[0]:
+                    t_done = t + 1
+            v1 = det_gauss(A.tolist(), p) if kind == "det" else perm_leibniz(A.tolist(), p)
+            assert v1 == v0
+            if t_done is not None:
+                out[kind]["completed"] += 1
+                out[kind]["contacts"].append(t_done)
+    res = {"n": n, "p": p, "trials": trials, "budget": budget, "seed": seed, "population": "det != 0 and perm != 0"}
+    for k in ("det", "perm"):
+        c = out[k]["contacts"]
+        res[k] = {"completed": out[k]["completed"], "median_contacts": float(np.median(c)) if c else None}
+    return res

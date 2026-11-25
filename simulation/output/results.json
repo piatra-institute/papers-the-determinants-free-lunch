@@ -1815,6 +1815,22 @@
    "perm_fibre_max_independent": 6969,
    "perm_fibre_mean_independent": 18.48130273482386,
    "perm_zero_count_changeable_independent": 2389440
+  },
+  "n6_p3": {
+   "n": 6,
+   "p": 3,
+   "pairs": 531441,
+   "independent_pairs": 528528,
+   "det_fibre_min": 24,
+   "det_fibre_max": 24,
+   "perm_orbit_size": 4,
+   "perm_fibre_equals_orbit_independent": 407040,
+   "perm_fibre_equals_orbit_dense": 3200,
+   "dense_independent_pairs": 3968,
+   "perm_fibre_min_independent": 4,
+   "perm_fibre_max_independent": 1601,
+   "perm_fibre_mean_independent": 7.055353737171919,
+   "perm_zero_count_changeable_independent": 114288
   }
  },
  "frozen": {
@@ -1951,106 +1967,148 @@
    }
   }
  },
- "greedy": {
-  "det_n3_p5": {
+ "greedy_paired": {
+  "n3_p5": {
    "n": 3,
    "p": 5,
-   "kind": "det",
    "trials": 200,
    "budget": 3000,
    "seed": 19,
-   "completed": 200,
-   "median_contacts": 4.0
+   "population": "det != 0 and perm != 0",
+   "det": {
+    "completed": 200,
+    "median_contacts": 4.0
+   },
+   "perm": {
+    "completed": 200,
+    "median_contacts": 4.0
+   }
   },
-  "perm_n3_p5": {
-   "n": 3,
-   "p": 5,
-   "kind": "perm",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 19,
-   "completed": 200,
-   "median_contacts": 4.0
-  },
-  "det_n4_p5": {
+  "n4_p5": {
    "n": 4,
    "p": 5,
-   "kind": "det",
    "trials": 200,
    "budget": 3000,
    "seed": 20,
-   "completed": 200,
-   "median_contacts": 15.0
+   "population": "det != 0 and perm != 0",
+   "det": {
+    "completed": 200,
+    "median_contacts": 15.0
+   },
+   "perm": {
+    "completed": 200,
+    "median_contacts": 19.0
+   }
   },
-  "perm_n4_p5": {
-   "n": 4,
-   "p": 5,
-   "kind": "perm",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 20,
-   "completed": 200,
-   "median_contacts": 20.0
-  },
-  "det_n5_p5": {
+  "n5_p5": {
    "n": 5,
    "p": 5,
-   "kind": "det",
    "trials": 200,
    "budget": 3000,
    "seed": 21,
-   "completed": 200,
-   "median_contacts": 38.0
+   "population": "det != 0 and perm != 0",
+   "det": {
+    "completed": 200,
+    "median_contacts": 39.0
+   },
+   "perm": {
+    "completed": 105,
+    "median_contacts": 124.0
+   }
   },
-  "perm_n5_p5": {
+  "n5_p3": {
+   "n": 5,
+   "p": 3,
+   "trials": 200,
+   "budget": 3000,
+   "seed": 19,
+   "population": "det != 0 and perm != 0",
+   "det": {
+    "completed": 200,
+    "median_contacts": 28.0
+   },
+   "perm": {
+    "completed": 164,
+    "median_contacts": 62.5
+   }
+  },
+  "n6_p3": {
+   "n": 6,
+   "p": 3,
+   "trials": 200,
+   "budget": 3000,
+   "seed": 20,
+   "population": "det != 0 and perm != 0",
+   "det": {
+    "completed": 200,
+    "median_contacts": 66.5
+   },
+   "perm": {
+    "completed": 87,
+    "median_contacts": 261.0
+   }
+  }
+ },
+ "certificate": {
+  "exhaustive_n5_p3": {
+   "n": 5,
+   "p": 3,
+   "independent_pairs": 58080,
+   "frozen": 30720,
+   "certified": 19200,
+   "certified_not_frozen": 0,
+   "certified_dependent": 0
+  },
+  "exhaustive_n5_p5": {
    "n": 5,
    "p": 5,
-   "kind": "perm",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 21,
-   "completed": 118,
-   "median_contacts": 118.5
+   "independent_pairs": 9746880,
+   "frozen": 6328320,
+   "certified": 6266880,
+   "certified_not_frozen": 0,
+   "certified_dependent": 0
   },
-  "det_n5_p3": {
-   "n": 5,
-   "p": 3,
-   "kind": "det",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 19,
-   "completed": 200,
-   "median_contacts": 32.0
-  },
-  "perm_n5_p3": {
-   "n": 5,
-   "p": 3,
-   "kind": "perm",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 19,
-   "completed": 162,
-   "median_contacts": 68.0
-  },
-  "det_n6_p3": {
+  "exhaustive_n6_p3": {
    "n": 6,
    "p": 3,
-   "kind": "det",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 20,
-   "completed": 200,
-   "median_contacts": 60.0
+   "independent_pairs": 528528,
+   "frozen": 407040,
+   "certified": 337920,
+   "certified_not_frozen": 0,
+   "certified_dependent": 0
   },
-  "perm_n6_p3": {
+  "sampled_n5_p101": {
+   "n": 5,
+   "p": 101,
+   "samples": 200000,
+   "seed": 3,
+   "certified": 199689,
+   "bound_share": 0.801980198019802,
+   "diagonal_checks": 10000,
+   "diagonal_errors": 0
+  },
+  "sampled_n6_p1009": {
    "n": 6,
-   "p": 3,
-   "kind": "perm",
-   "trials": 200,
-   "budget": 3000,
-   "seed": 20,
-   "completed": 94,
-   "median_contacts": 202.0
+   "p": 1009,
+   "samples": 200000,
+   "seed": 4,
+   "certified": 200000,
+   "bound_share": 0.9762140733399405,
+   "diagonal_checks": 12000,
+   "diagonal_errors": 0
+  },
+  "sampled_n5_p1009": {
+   "n": 5,
+   "p": 1009,
+   "samples": 100000,
+   "seed": 5,
+   "certified": 99998,
+   "bound_share": 0.9801783944499505,
+   "diagonal_checks": 10000,
+   "diagonal_errors": 0,
+   "matrices": 20000,
+   "matrices_all_pairs_certified": 19998,
+   "matrix_bound_share": 0.8017839444995045
   }
  },
  "sign_census": {
@@ -2104,5 +2162,5 @@
   "checks": 20,
   "passed": 20
  },
- "runtime_seconds": 102.7
+ "runtime_seconds": 114.3
 }

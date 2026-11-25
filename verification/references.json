@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "references_sha256": "9118d360ebb4b45b6d02f2c38c1452ed03740816344b010e098402084a0c0371",
+  "references_sha256": "f80ce9a5bfb3ba536e733a96297c902e32743cff7389acd638b6bbefc23ab3da",
   "bibliography_inputs": {
-    "references.yaml": "9118d360ebb4b45b6d02f2c38c1452ed03740816344b010e098402084a0c0371"
+    "references.yaml": "f80ce9a5bfb3ba536e733a96297c902e32743cff7389acd638b6bbefc23ab3da"
   },
   "entries": [
     {
@@ -59,7 +59,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:21.266672+00:00",
+      "fetched_at": "2026-11-25T23:19:27.872620+00:00",
       "record_sha256": "d3215baf830a808ea5198eb1e29c292b8b083479bc8e04d442f4f3b6b20a3253",
       "suggestions": [],
       "message": "identity matches"
@@ -118,7 +118,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:21.880392+00:00",
+      "fetched_at": "2026-11-25T23:19:28.436272+00:00",
       "record_sha256": "20dfd9f78e2c0a8f32387d4bf906d6afb8724e285dc9782b33daf0398ed2b81e",
       "suggestions": [],
       "message": "different fields: container-title"
@@ -177,7 +177,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:22.441821+00:00",
+      "fetched_at": "2026-11-25T23:19:29.072907+00:00",
       "record_sha256": "c4b5c2d4908bda5c4d99f243a7bd8b54e1c54ef179d599cc48573659d2169686",
       "suggestions": [],
       "message": "different fields: container-title"
@@ -237,7 +237,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:23.026371+00:00",
+      "fetched_at": "2026-11-25T23:19:29.796944+00:00",
       "record_sha256": "d3a0b0e5c5c4fa883d02b9972aaf1574f638bca35d94ee5d3485e6d3e49762b7",
       "suggestions": [],
       "message": "identity matches"
@@ -296,7 +296,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:23.574284+00:00",
+      "fetched_at": "2026-11-25T23:19:30.365590+00:00",
       "record_sha256": "7a121f701af6ca97c80009ff095f104fe5d9710a3d18b613d94e86c7eca6b184",
       "suggestions": [],
       "message": "identity matches"
@@ -355,7 +355,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:24.221823+00:00",
+      "fetched_at": "2026-11-25T23:19:30.939924+00:00",
       "record_sha256": "02a2ec65a5b066341bb3e7aabe234a87316f0ac996dfcb671f46f164dc8634df",
       "suggestions": [],
       "message": "identity matches"
@@ -415,7 +415,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:24.762889+00:00",
+      "fetched_at": "2026-11-25T23:19:31.562925+00:00",
       "record_sha256": "7812a55381cefdec8ddf25d38d6b653e8c568c730761a34d10e96960363b9ad1",
       "suggestions": [],
       "message": "identity matches"
@@ -475,7 +475,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:25.386712+00:00",
+      "fetched_at": "2026-11-25T23:19:32.189261+00:00",
       "record_sha256": "a3717b77d56e62a4c07b139277cbd32157e9267e3434c725550d9aca7824cd3f",
       "suggestions": [],
       "message": "identity matches"
@@ -534,7 +534,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:25.933268+00:00",
+      "fetched_at": "2026-11-25T23:19:32.771511+00:00",
       "record_sha256": "10a3a612f71f3fed90a707d5c4426e9b0d9390691e585083eb0f186e12ff1076",
       "suggestions": [],
       "message": "identity matches"
@@ -593,7 +593,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:26.550363+00:00",
+      "fetched_at": "2026-11-25T23:19:33.334670+00:00",
       "record_sha256": "78caf4aa46d19bc1cf4938c024e5380fb72cb985b82dad77d24bae88459edc78",
       "suggestions": [],
       "message": "identity matches"
@@ -652,7 +652,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:27.095429+00:00",
+      "fetched_at": "2026-11-25T23:19:33.886788+00:00",
       "record_sha256": "0a92a697e8f36722d1274dcc4dc692b7eef967f7848d56a0cfb01f90fb118118",
       "suggestions": [],
       "message": "identity matches"
@@ -711,7 +711,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:27.714861+00:00",
+      "fetched_at": "2026-11-25T23:19:34.508189+00:00",
       "record_sha256": "845d7c28f0f21f3929557311b4a53de82ebbc189e6649f043786b9eaff84cad0",
       "suggestions": [],
       "message": "different fields: container-title, page"
@@ -770,7 +770,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:28.452744+00:00",
+      "fetched_at": "2026-11-25T23:19:35.232901+00:00",
       "record_sha256": "fa6f47fede9783891e9ec606c951500dfbaca4ebc8e028811cf138bec2fde2e9",
       "suggestions": [],
       "message": "different fields: page"
@@ -830,7 +830,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:29.104356+00:00",
+      "fetched_at": "2026-11-25T23:19:35.851174+00:00",
       "record_sha256": "3dc8f78f1bd00e9ed1f93aadd07980c9eac524324c7ca2fb78aa1d1e92f75e3f",
       "suggestions": [],
       "message": "identity matches"
@@ -889,7 +889,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:29.676636+00:00",
+      "fetched_at": "2026-11-25T23:19:36.532723+00:00",
       "record_sha256": "6e0e21def2efbb60dd3db815a4cbc77317615302d2a7c9c5acdae62d4714bff2",
       "suggestions": [],
       "message": "identity matches"
@@ -948,7 +948,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:30.299131+00:00",
+      "fetched_at": "2026-11-25T23:19:37.099484+00:00",
       "record_sha256": "7fc99ed76ac67f462d9f2085737b8e30457701b01264052cdaba3dcd442ba0ff",
       "suggestions": [],
       "message": "identity matches"
@@ -1008,7 +1008,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:30.857089+00:00",
+      "fetched_at": "2026-11-25T23:19:37.728065+00:00",
       "record_sha256": "2863e9bdf585923f0968c0559d95c02cf355b100650df22d24f3b43b3ea90933",
       "suggestions": [],
       "message": "identity matches"
@@ -1067,7 +1067,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:31.423757+00:00",
+      "fetched_at": "2026-11-25T23:19:38.357073+00:00",
       "record_sha256": "f9e8cb2cc7082b90de8561e216482b8415a934732d9024e3dcfca4d81a3fb966",
       "suggestions": [],
       "message": "identity matches"
@@ -1127,7 +1127,7 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:32.184919+00:00",
+      "fetched_at": "2026-11-25T23:19:39.059341+00:00",
       "record_sha256": "7980c28bdde44eca25eaae91ae3e51f1fc345e2d23983e8b53ac65d3cbf70ca0",
       "suggestions": [],
       "message": "identity matches"
@@ -1183,10 +1183,164 @@
         }
       },
       "registry": "Crossref",
-      "fetched_at": "2026-11-25T22:03:32.893699+00:00",
+      "fetched_at": "2026-11-25T23:19:39.604501+00:00",
       "record_sha256": "75adabad1dec6c8708e4cf319ed81e033d5b75b8d44639f42cf536a95aa3bd80",
       "suggestions": [],
       "message": "different fields: container-title"
+    },
+    {
+      "id": "anderson1956",
+      "doi": null,
+      "outcome": "unverified",
+      "compared_fields": {},
+      "registry": null,
+      "fetched_at": "2026-11-25T23:19:40.330101+00:00",
+      "record_sha256": null,
+      "suggestions": [
+        {
+          "DOI": "10.1016/j.jspi.2023.07.009",
+          "title": [
+            "Statistical inference in factor analysis for diffusion processes from discrete observations"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1016/j.jspi.2004.08.020",
+          "title": [
+            "Nonstationary dynamic factor analysis"
+          ],
+          "registry": "Crossref"
+        },
+        {
+          "DOI": "10.1111/j.2044-8317.1956.tb00170.x",
+          "title": [
+            "THE INTERNATIONAL COLLOQUIUM ON FACTOR ANALYSIS"
+          ],
+          "registry": "Crossref"
+        }
+      ],
+      "message": "no DOI; identity reviewed by the referee",
+      "unverified_reason": "no_doi"
+    },
+    {
+      "id": "drton2007",
+      "doi": "10.1007/s00440-006-0033-2",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Algebraic factor analysis: Tetrads, pentads and beyond",
+          "registry": [
+            "Algebraic factor analysis: tetrads, pentads and beyond"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "drton",
+          "registry": "drton",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2007
+          ],
+          "registry": [
+            2006,
+            2006,
+            2007,
+            2006
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Probability Theory and Related Fields",
+          "registry": [
+            "Probability Theory and Related Fields"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 138,
+          "registry": "138",
+          "match": true
+        },
+        "issue": {
+          "reference": "3-4",
+          "registry": "3-4",
+          "match": true
+        },
+        "page": {
+          "reference": "463-493",
+          "registry": "463-493",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T23:19:41.068192+00:00",
+      "record_sha256": "ee957b9d0e6a89771d042730bde965fe4985c852bf051210e4e1c53256e61c75",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "schwartz1980",
+      "doi": "10.1145/322217.322225",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Fast probabilistic algorithms for verification of polynomial identities",
+          "registry": [
+            "Fast Probabilistic Algorithms for Verification of Polynomial Identities"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "schwartz",
+          "registry": "schwartz",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1980
+          ],
+          "registry": [
+            1980,
+            1980,
+            1980,
+            1980
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of the ACM",
+          "registry": [
+            "Journal of the ACM"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 27,
+          "registry": "27",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "701-717",
+          "registry": "701-717",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T23:19:41.627985+00:00",
+      "record_sha256": "fe28dcfb325c93fa5471cc6ee3440405154c9b6ca13994b034caf84087b24357",
+      "suggestions": [],
+      "message": "identity matches"
     }
   ]
 }

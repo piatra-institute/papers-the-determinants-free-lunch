@@ -1,0 +1,57 @@
+{
+  "pdf_sha256": "bbf228a96d994efd2e91a15e39229abff7a4a1d9183620bb583581eb31651e7e",
+  "reviewed": "2026-11-26",
+  "reviewer": {
+    "tool": "codex",
+    "model": "gpt-6-astra",
+    "family": "openai"
+  },
+  "authors": [
+    {
+      "tool": "claude-code",
+      "model": "claude-opus-5-5",
+      "family": "anthropic"
+    }
+  ],
+  "page_count": 14,
+  "pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "all_pages_inspected": true,
+  "notes": "Every page rendered at 110 dpi with pdftoppm and inspected by the independent reviewer; no layout problems reported.",
+  "reports": [
+    {
+      "path": "reviews/2026-11-closure-round1.json",
+      "sha256": "3c7f66dc4078f45cee8d2a36d0d51001555fa1cc3a070116a1c5e8635c2fb2f8"
+    },
+    {
+      "path": "reviews/2026-11-closure-round2.json",
+      "sha256": "8d6e47b3db49676d0e3c184c3c8fa2a33d6c89c0e003983b4792370fa0f4d6bb"
+    },
+    {
+      "path": "reviews/2026-11-closure-round3.json",
+      "sha256": "9c81b6addffcde6f5f14af8434b4e82df8ec4e10e5509ba4cc15a488badca247"
+    },
+    {
+      "path": "reviews/2026-11-closure-round4.json",
+      "sha256": "a5930bc827cea233d950cfd6a0362b6aff94e0f83e22a051b64fc41efc23d1a9"
+    },
+    {
+      "path": "reviews/2026-11-closure-round5.json",
+      "sha256": "22309b3533572d8996edd89be6c1eec0791804ab6b7fad4c5dac518a9bacaba9"
+    }
+  ]
+}
