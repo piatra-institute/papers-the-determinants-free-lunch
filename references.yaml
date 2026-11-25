@@ -1,0 +1,199 @@
+# CSL references with stable IDs; cite using Pandoc [@id] syntax.
+# Record identities and supporting passages in sources.md and claims.yaml.
+references:
+- id: valiant1979permanent
+  type: article-journal
+  author: [{family: Valiant, given: Leslie G.}]
+  title: The complexity of computing the permanent
+  container-title: Theoretical Computer Science
+  volume: 8
+  issue: 2
+  page: 189-201
+  issued: {date-parts: [[1979]]}
+  DOI: 10.1016/0304-3975(79)90044-6
+- id: valiant1979classes
+  type: paper-conference
+  author: [{family: Valiant, given: Leslie G.}]
+  title: Completeness classes in algebra
+  container-title: Proceedings of the Eleventh Annual ACM Symposium on Theory of Computing
+  page: 249-261
+  issued: {date-parts: [[1979]]}
+  publisher: ACM
+  DOI: 10.1145/800135.804419
+- id: burgisser2000
+  type: book
+  author: [{family: Bürgisser, given: Peter}]
+  title: Completeness and Reduction in Algebraic Complexity Theory
+  collection-title: Algorithms and Computation in Mathematics
+  publisher: Springer
+  publisher-place: Berlin
+  issued: {date-parts: [[2000]]}
+  DOI: 10.1007/978-3-662-04179-6
+- id: marcus1962
+  type: article-journal
+  author: [{family: Marcus, given: Marvin}, {family: May, given: F. C.}]
+  title: The permanent function
+  container-title: Canadian Journal of Mathematics
+  volume: 14
+  page: 177-189
+  issued: {date-parts: [[1962]]}
+  DOI: 10.4153/CJM-1962-013-4
+- id: botta1967
+  type: article-journal
+  author: [{family: Botta, given: Peter}]
+  title: Linear transformations that preserve the permanent
+  container-title: Proceedings of the American Mathematical Society
+  volume: 18
+  issue: 3
+  page: 566-569
+  issued: {date-parts: [[1967]]}
+  DOI: 10.1090/S0002-9939-1967-0213376-6
+- id: dieudonne1949
+  type: article-journal
+  author: [{family: Dieudonné, given: Jean}]
+  title: Sur une généralisation du groupe orthogonal à quatre variables
+  container-title: Archiv der Mathematik
+  volume: 1
+  issue: 4
+  page: 282-287
+  issued: {date-parts: [[1948]]}
+  language: fr
+  DOI: 10.1007/BF02038756
+- id: li2001
+  type: article-journal
+  author: [{family: Li, given: Chi-Kwong}, {family: Pierce, given: Stephen}]
+  title: Linear preserver problems
+  container-title: The American Mathematical Monthly
+  volume: 108
+  issue: 7
+  page: 591-605
+  issued: {date-parts: [[2001]]}
+  DOI: 10.1080/00029890.2001.11919790
+- id: mulmuley2001
+  type: article-journal
+  author: [{family: Mulmuley, given: Ketan D.}, {family: Sohoni, given: Milind}]
+  title: 'Geometric complexity theory I: An approach to the P vs. NP and related problems'
+  container-title: SIAM Journal on Computing
+  volume: 31
+  issue: 2
+  page: 496-526
+  issued: {date-parts: [[2001]]}
+  DOI: 10.1137/S009753970038715X
+- id: kasteleyn1963
+  type: article-journal
+  author: [{family: Kasteleyn, given: P. W.}]
+  title: Dimer statistics and phase transitions
+  container-title: Journal of Mathematical Physics
+  volume: 4
+  issue: 2
+  page: 287-293
+  issued: {date-parts: [[1963]]}
+  DOI: 10.1063/1.1703953
+- id: little1975
+  type: article-journal
+  author: [{family: Little, given: C. H. C.}]
+  title: A characterization of convertible (0, 1)-matrices
+  container-title: Journal of Combinatorial Theory, Series B
+  volume: 18
+  issue: 3
+  page: 187-208
+  issued: {date-parts: [[1975]]}
+  DOI: 10.1016/0095-8956(75)90048-9
+- id: vazirani1989
+  type: article-journal
+  author: [{family: Vazirani, given: Vijay V.}, {family: Yannakakis, given: Mihalis}]
+  title: Pfaffian orientations, 0-1 permanents, and even cycles in directed graphs
+  container-title: Discrete Applied Mathematics
+  volume: 25
+  issue: 1-2
+  page: 179-190
+  issued: {date-parts: [[1989]]}
+  DOI: 10.1016/0166-218X(89)90053-X
+- id: robertson1999
+  type: article-journal
+  author: [{family: Robertson, given: Neil}, {family: Seymour, given: P. D.}, {family: Thomas, given: Robin}]
+  title: Permanents, Pfaffian orientations, and even directed circuits
+  container-title: Annals of Mathematics
+  volume: 150
+  issue: 3
+  page: 929-975
+  issued: {date-parts: [[1999]]}
+  DOI: 10.2307/121059
+- id: mccuaig2004
+  type: article-journal
+  author: [{family: McCuaig, given: William}]
+  title: Pólya's permanent problem
+  container-title: The Electronic Journal of Combinatorics
+  volume: 11
+  issue: 1
+  page: R79
+  issued: {date-parts: [[2004]]}
+  DOI: 10.37236/1832
+- id: dijkstra1974
+  type: article-journal
+  author: [{family: Dijkstra, given: Edsger W.}]
+  title: Self-stabilizing systems in spite of distributed control
+  container-title: Communications of the ACM
+  volume: 17
+  issue: 11
+  page: 643-644
+  issued: {date-parts: [[1974]]}
+  DOI: 10.1145/361179.361202
+- id: boyd2006
+  type: article-journal
+  author: [{family: Boyd, given: Stephen}, {family: Ghosh, given: Arpita}, {family: Prabhakar, given: Balaji}, {family: Shah, given: Devavrat}]
+  title: Randomized gossip algorithms
+  container-title: IEEE Transactions on Information Theory
+  volume: 52
+  issue: 6
+  page: 2508-2530
+  issued: {date-parts: [[2006]]}
+  DOI: 10.1109/TIT.2006.874516
+- id: deb2006
+  type: article-journal
+  author: [{family: Deb, given: Supratim}, {family: Médard, given: Muriel}, {family: Choute, given: Clifford}]
+  title: 'Algebraic gossip: A network coding approach to optimal multiple rumor mongering'
+  container-title: IEEE Transactions on Information Theory
+  volume: 52
+  issue: 6
+  page: 2486-2507
+  issued: {date-parts: [[2006]]}
+  DOI: 10.1109/TIT.2006.874532
+- id: angluin2006
+  type: article-journal
+  author: [{family: Angluin, given: Dana}, {family: Aspnes, given: James}, {family: Diamadi, given: Zoë}, {family: Fischer, given: Michael J.}, {family: Peralta, given: René}]
+  title: Computation in networks of passively mobile finite-state sensors
+  container-title: Distributed Computing
+  volume: 18
+  issue: 4
+  page: 235-253
+  issued: {date-parts: [[2006]]}
+  DOI: 10.1007/s00446-005-0138-3
+- id: tiskin2007
+  type: article-journal
+  author: [{family: Tiskin, given: Alexander}]
+  title: Communication-efficient parallel generic pairwise elimination
+  container-title: Future Generation Computer Systems
+  volume: 23
+  issue: 2
+  page: 179-188
+  issued: {date-parts: [[2007]]}
+  DOI: 10.1016/j.future.2006.04.017
+- id: zhang2024
+  type: article-journal
+  author: [{family: Zhang, given: Taining}, {family: Goldstein, given: Adam}, {family: Levin, given: Michael}]
+  title: 'Classical sorting algorithms as a model of morphogenesis: Self-sorting arrays reveal unexpected competencies in a minimal model of basal intelligence'
+  container-title: Adaptive Behavior
+  volume: 33
+  issue: 1
+  page: 25-54
+  issued: {date-parts: [[2024]]}
+  DOI: 10.1177/10597123241269740
+- id: levin2025
+  type: article
+  author: [{family: Levin, given: Michael}]
+  title: 'Ingressing minds: Causal patterns beyond genetics and environment in natural, synthetic, and hybrid embodiments'
+  container-title: PsyArXiv
+  genre: Preprint, version 3
+  issued: {date-parts: [[2025]]}
+  DOI: 10.31234/osf.io/5g2xj_v3

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "id": "main",
+  "started": "2026-11-25T21:59:44.042881+00:00",
+  "finished": "2026-11-25T22:01:27.771101+00:00",
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "run_all.py"
+  ],
+  "cwd": "simulation",
+  "runtime": {
+    "scope": "recorder",
+    "python": "3.14.3 (main, Mar 25 2026, 03:28:18) [Clang 22.1.1 ]",
+    "platform": "macOS-15.1-arm64-arm-64bit-Mach-O"
+  },
+  "execution_result": null,
+  "execution": {
+    "status": "PASS",
+    "exit_code": 0,
+    "detail": "command completed"
+  },
+  "input_scope": "execution-v1",
+  "additional_inputs": [],
+  "inputs": {
+    "simulation/collective.py": "cacfff0c7f88ff1729e4d392db1054d2a47c35b95aabfbbf5e234a37c163de61",
+    "simulation/fieldlin.py": "a4c4be3145fd0426c89cf8507dac2948386064f05146f60ea14808874a65de4f",
+    "simulation/localsym.py": "82ed1f03651b1c1787fcb5158bc9b0e11ed05f36434e2e4b3475785263db115e",
+    "simulation/pyproject.toml": "5193e6d1d19cb031edadc6ca01e58fd2393eb4d32a97001ecb4f67171c838e72",
+    "simulation/run_all.py": "97ed2429fb5e5b1c80573be5e4f61069c62afb4b4737cfc53bbca5bd72fcafad",
+    "simulation/signrule.py": "e245ccd83cba6a1b5f5166f39d5b11b5960eaca20623a0d765e0c35fabf0d6fc",
+    "simulation/test_study.py": "dab3708c3254d7a1617155d089c392b370270889585233d562b4c1992fd5e8f4",
+    "simulation/uv.lock": "2e12dab412de047f3c6fb40ea377e407d29c4f4bbd06a003113add3de61b5297"
+  },
+  "artifacts": {
+    "simulation/output/results.json": "e9bb621ee75566a23c92dfc8a34926dfb75d60f878eef7bb1a9ad235f083a5c4",
+    "simulation/output/trials.json": "aa2c4df336d12d345b2c28fc323defb6834c2b9b90f14911ae6713a0500e5205"
+  }
+}

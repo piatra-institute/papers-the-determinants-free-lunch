@@ -1,0 +1,1192 @@
+{
+  "schema": 1,
+  "references_sha256": "9118d360ebb4b45b6d02f2c38c1452ed03740816344b010e098402084a0c0371",
+  "bibliography_inputs": {
+    "references.yaml": "9118d360ebb4b45b6d02f2c38c1452ed03740816344b010e098402084a0c0371"
+  },
+  "entries": [
+    {
+      "id": "valiant1979permanent",
+      "doi": "10.1016/0304-3975(79)90044-6",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The complexity of computing the permanent",
+          "registry": [
+            "The complexity of computing the permanent"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "valiant",
+          "registry": "valiant",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1979
+          ],
+          "registry": [
+            1979,
+            1979,
+            1979
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Theoretical Computer Science",
+          "registry": [
+            "Theoretical Computer Science"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 8,
+          "registry": "8",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "189-201",
+          "registry": "189-201",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:21.266672+00:00",
+      "record_sha256": "d3215baf830a808ea5198eb1e29c292b8b083479bc8e04d442f4f3b6b20a3253",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "valiant1979classes",
+      "doi": "10.1145/800135.804419",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Completeness classes in algebra",
+          "registry": [
+            "Completeness classes in algebra"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "valiant",
+          "registry": "valiant",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1979
+          ],
+          "registry": [
+            1979,
+            1979,
+            1979
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Proceedings of the Eleventh Annual ACM Symposium on Theory of Computing",
+          "registry": [
+            "Proceedings of the eleventh annual ACM symposium on Theory of computing  - STOC '79"
+          ],
+          "match": false
+        },
+        "volume": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": "249-261",
+          "registry": "249-261",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:21.880392+00:00",
+      "record_sha256": "20dfd9f78e2c0a8f32387d4bf906d6afb8724e285dc9782b33daf0398ed2b81e",
+      "suggestions": [],
+      "message": "different fields: container-title"
+    },
+    {
+      "id": "burgisser2000",
+      "doi": "10.1007/978-3-662-04179-6",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Completeness and Reduction in Algebraic Complexity Theory",
+          "registry": [
+            "Completeness and Reduction in Algebraic Complexity Theory"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "burgisser",
+          "registry": "burgisser",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2000
+          ],
+          "registry": [
+            2000,
+            2000,
+            2000
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": null,
+          "registry": [
+            "Algorithms and Computation in Mathematics"
+          ],
+          "match": false
+        },
+        "volume": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:22.441821+00:00",
+      "record_sha256": "c4b5c2d4908bda5c4d99f243a7bd8b54e1c54ef179d599cc48573659d2169686",
+      "suggestions": [],
+      "message": "different fields: container-title"
+    },
+    {
+      "id": "marcus1962",
+      "doi": "10.4153/CJM-1962-013-4",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "The permanent function",
+          "registry": [
+            "The Permanent Function"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "marcus",
+          "registry": "marcus",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1962
+          ],
+          "registry": [
+            1962,
+            1962,
+            1962,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Canadian Journal of Mathematics",
+          "registry": [
+            "Canadian Journal of Mathematics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 14,
+          "registry": "14",
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": "177-189",
+          "registry": "177-189",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:23.026371+00:00",
+      "record_sha256": "d3a0b0e5c5c4fa883d02b9972aaf1574f638bca35d94ee5d3485e6d3e49762b7",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "botta1967",
+      "doi": "10.1090/S0002-9939-1967-0213376-6",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Linear transformations that preserve the permanent",
+          "registry": [
+            "Linear transformations that preserve the permanent"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "botta",
+          "registry": "botta",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1967
+          ],
+          "registry": [
+            1967,
+            1967,
+            1967
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Proceedings of the American Mathematical Society",
+          "registry": [
+            "Proceedings of the American Mathematical Society"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 18,
+          "registry": "18",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "566-569",
+          "registry": "566-569",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:23.574284+00:00",
+      "record_sha256": "7a121f701af6ca97c80009ff095f104fe5d9710a3d18b613d94e86c7eca6b184",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "dieudonne1949",
+      "doi": "10.1007/BF02038756",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Sur une généralisation du groupe orthogonal à quatre variables",
+          "registry": [
+            "Sur une généralisation du groupe orthogonal à quatre variables"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "dieudonne",
+          "registry": "dieudonne",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1948
+          ],
+          "registry": [
+            1948,
+            1948,
+            1948
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Archiv der Mathematik",
+          "registry": [
+            "Archiv der Mathematik"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "282-287",
+          "registry": "282-287",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:24.221823+00:00",
+      "record_sha256": "02a2ec65a5b066341bb3e7aabe234a87316f0ac996dfcb671f46f164dc8634df",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "li2001",
+      "doi": "10.1080/00029890.2001.11919790",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Linear preserver problems",
+          "registry": [
+            "Linear Preserver Problems"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "li",
+          "registry": "li",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2001
+          ],
+          "registry": [
+            2001,
+            2001,
+            2001,
+            2018
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "The American Mathematical Monthly",
+          "registry": [
+            "The American Mathematical Monthly"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 108,
+          "registry": "108",
+          "match": true
+        },
+        "issue": {
+          "reference": 7,
+          "registry": "7",
+          "match": true
+        },
+        "page": {
+          "reference": "591-605",
+          "registry": "591-605",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:24.762889+00:00",
+      "record_sha256": "7812a55381cefdec8ddf25d38d6b653e8c568c730761a34d10e96960363b9ad1",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "mulmuley2001",
+      "doi": "10.1137/S009753970038715X",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Geometric complexity theory I: An approach to the P vs. NP and related problems",
+          "registry": [
+            "Geometric Complexity Theory I: An Approach to the\n                    <i>P</i>\n                    vs.\n                    <i>NP</i>\n                    and Related Problems"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "mulmuley",
+          "registry": "mulmuley",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2001
+          ],
+          "registry": [
+            2001,
+            2001,
+            2001,
+            2006
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "SIAM Journal on Computing",
+          "registry": [
+            "SIAM Journal on Computing"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 31,
+          "registry": "31",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "496-526",
+          "registry": "496-526",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:25.386712+00:00",
+      "record_sha256": "a3717b77d56e62a4c07b139277cbd32157e9267e3434c725550d9aca7824cd3f",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "kasteleyn1963",
+      "doi": "10.1063/1.1703953",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Dimer statistics and phase transitions",
+          "registry": [
+            "Dimer Statistics and Phase Transitions"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "kasteleyn",
+          "registry": "kasteleyn",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1963
+          ],
+          "registry": [
+            1963,
+            1963,
+            1963
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Mathematical Physics",
+          "registry": [
+            "Journal of Mathematical Physics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "287-293",
+          "registry": "287-293",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:25.933268+00:00",
+      "record_sha256": "10a3a612f71f3fed90a707d5c4426e9b0d9390691e585083eb0f186e12ff1076",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "little1975",
+      "doi": "10.1016/0095-8956(75)90048-9",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "A characterization of convertible (0, 1)-matrices",
+          "registry": [
+            "A characterization of convertible (0, 1)-matrices"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "little",
+          "registry": "little",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1975
+          ],
+          "registry": [
+            1975,
+            1975,
+            1975
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Journal of Combinatorial Theory, Series B",
+          "registry": [
+            "Journal of Combinatorial Theory, Series B"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 18,
+          "registry": "18",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "187-208",
+          "registry": "187-208",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:26.550363+00:00",
+      "record_sha256": "78caf4aa46d19bc1cf4938c024e5380fb72cb985b82dad77d24bae88459edc78",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "vazirani1989",
+      "doi": "10.1016/0166-218X(89)90053-X",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Pfaffian orientations, 0-1 permanents, and even cycles in directed graphs",
+          "registry": [
+            "Pfaffian orientations, 0–1 permanents, and even cycles in directed graphs"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "vazirani",
+          "registry": "vazirani",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1989
+          ],
+          "registry": [
+            1989,
+            1989,
+            1989
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Discrete Applied Mathematics",
+          "registry": [
+            "Discrete Applied Mathematics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 25,
+          "registry": "25",
+          "match": true
+        },
+        "issue": {
+          "reference": "1-2",
+          "registry": "1-2",
+          "match": true
+        },
+        "page": {
+          "reference": "179-190",
+          "registry": "179-190",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:27.095429+00:00",
+      "record_sha256": "0a92a697e8f36722d1274dcc4dc692b7eef967f7848d56a0cfb01f90fb118118",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "robertson1999",
+      "doi": "10.2307/121059",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Permanents, Pfaffian orientations, and even directed circuits",
+          "registry": [
+            "Permanents, Pfaffian Orientations, and Even Directed Circuits"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "robertson",
+          "registry": "robertson",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1999
+          ],
+          "registry": [
+            1999,
+            1999,
+            1999
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Annals of Mathematics",
+          "registry": [
+            "The Annals of Mathematics"
+          ],
+          "match": false
+        },
+        "volume": {
+          "reference": 150,
+          "registry": "150",
+          "match": true
+        },
+        "issue": {
+          "reference": 3,
+          "registry": "3",
+          "match": true
+        },
+        "page": {
+          "reference": "929-975",
+          "registry": "929",
+          "match": false
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:27.714861+00:00",
+      "record_sha256": "845d7c28f0f21f3929557311b4a53de82ebbc189e6649f043786b9eaff84cad0",
+      "suggestions": [],
+      "message": "different fields: container-title, page"
+    },
+    {
+      "id": "mccuaig2004",
+      "doi": "10.37236/1832",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Pólya's permanent problem",
+          "registry": [
+            "Pólya's Permanent Problem"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "mccuaig",
+          "registry": "mccuaig",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2004
+          ],
+          "registry": [
+            2004,
+            2004,
+            2004
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "The Electronic Journal of Combinatorics",
+          "registry": [
+            "The Electronic Journal of Combinatorics"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 11,
+          "registry": "11",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "R79",
+          "registry": null,
+          "match": false
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:28.452744+00:00",
+      "record_sha256": "fa6f47fede9783891e9ec606c951500dfbaca4ebc8e028811cf138bec2fde2e9",
+      "suggestions": [],
+      "message": "different fields: page"
+    },
+    {
+      "id": "dijkstra1974",
+      "doi": "10.1145/361179.361202",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Self-stabilizing systems in spite of distributed control",
+          "registry": [
+            "Self-stabilizing systems in spite of distributed control"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "dijkstra",
+          "registry": "dijkstra",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            1974
+          ],
+          "registry": [
+            1974,
+            1974,
+            1974,
+            1974
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Communications of the ACM",
+          "registry": [
+            "Communications of the ACM"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 17,
+          "registry": "17",
+          "match": true
+        },
+        "issue": {
+          "reference": 11,
+          "registry": "11",
+          "match": true
+        },
+        "page": {
+          "reference": "643-644",
+          "registry": "643-644",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:29.104356+00:00",
+      "record_sha256": "3dc8f78f1bd00e9ed1f93aadd07980c9eac524324c7ca2fb78aa1d1e92f75e3f",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "boyd2006",
+      "doi": "10.1109/TIT.2006.874516",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Randomized gossip algorithms",
+          "registry": [
+            "Randomized gossip algorithms"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "boyd",
+          "registry": "boyd",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2006
+          ],
+          "registry": [
+            2006,
+            2006,
+            2006
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "IEEE Transactions on Information Theory",
+          "registry": [
+            "IEEE Transactions on Information Theory"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 52,
+          "registry": "52",
+          "match": true
+        },
+        "issue": {
+          "reference": 6,
+          "registry": "6",
+          "match": true
+        },
+        "page": {
+          "reference": "2508-2530",
+          "registry": "2508-2530",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:29.676636+00:00",
+      "record_sha256": "6e0e21def2efbb60dd3db815a4cbc77317615302d2a7c9c5acdae62d4714bff2",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "deb2006",
+      "doi": "10.1109/TIT.2006.874532",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Algebraic gossip: A network coding approach to optimal multiple rumor mongering",
+          "registry": [
+            "Algebraic gossip: a network coding approach to optimal multiple rumor mongering"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "deb",
+          "registry": "deb",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2006
+          ],
+          "registry": [
+            2006,
+            2006,
+            2006
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "IEEE Transactions on Information Theory",
+          "registry": [
+            "IEEE Transactions on Information Theory"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 52,
+          "registry": "52",
+          "match": true
+        },
+        "issue": {
+          "reference": 6,
+          "registry": "6",
+          "match": true
+        },
+        "page": {
+          "reference": "2486-2507",
+          "registry": "2486-2507",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:30.299131+00:00",
+      "record_sha256": "7fc99ed76ac67f462d9f2085737b8e30457701b01264052cdaba3dcd442ba0ff",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "angluin2006",
+      "doi": "10.1007/s00446-005-0138-3",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Computation in networks of passively mobile finite-state sensors",
+          "registry": [
+            "Computation in networks of passively mobile finite-state sensors"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "angluin",
+          "registry": "angluin",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2006
+          ],
+          "registry": [
+            2006,
+            2006,
+            2006,
+            2006
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Distributed Computing",
+          "registry": [
+            "Distributed Computing"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 18,
+          "registry": "18",
+          "match": true
+        },
+        "issue": {
+          "reference": 4,
+          "registry": "4",
+          "match": true
+        },
+        "page": {
+          "reference": "235-253",
+          "registry": "235-253",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:30.857089+00:00",
+      "record_sha256": "2863e9bdf585923f0968c0559d95c02cf355b100650df22d24f3b43b3ea90933",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "tiskin2007",
+      "doi": "10.1016/j.future.2006.04.017",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Communication-efficient parallel generic pairwise elimination",
+          "registry": [
+            "Communication-efficient parallel generic pairwise elimination"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "tiskin",
+          "registry": "tiskin",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2007
+          ],
+          "registry": [
+            2007,
+            2007,
+            2007
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Future Generation Computer Systems",
+          "registry": [
+            "Future Generation Computer Systems"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 23,
+          "registry": "23",
+          "match": true
+        },
+        "issue": {
+          "reference": 2,
+          "registry": "2",
+          "match": true
+        },
+        "page": {
+          "reference": "179-188",
+          "registry": "179-188",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:31.423757+00:00",
+      "record_sha256": "f9e8cb2cc7082b90de8561e216482b8415a934732d9024e3dcfca4d81a3fb966",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "zhang2024",
+      "doi": "10.1177/10597123241269740",
+      "outcome": "verified",
+      "compared_fields": {
+        "title": {
+          "reference": "Classical sorting algorithms as a model of morphogenesis: Self-sorting arrays reveal unexpected competencies in a minimal model of basal intelligence",
+          "registry": [
+            "Classical sorting algorithms as a model of morphogenesis: Self-sorting arrays reveal unexpected competencies in a minimal model of basal intelligence"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "zhang",
+          "registry": "zhang",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2024
+          ],
+          "registry": [
+            2024,
+            2024,
+            2025,
+            2024
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "Adaptive Behavior",
+          "registry": [
+            "Adaptive Behavior"
+          ],
+          "match": true
+        },
+        "volume": {
+          "reference": 33,
+          "registry": "33",
+          "match": true
+        },
+        "issue": {
+          "reference": 1,
+          "registry": "1",
+          "match": true
+        },
+        "page": {
+          "reference": "25-54",
+          "registry": "25-54",
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:32.184919+00:00",
+      "record_sha256": "7980c28bdde44eca25eaae91ae3e51f1fc345e2d23983e8b53ac65d3cbf70ca0",
+      "suggestions": [],
+      "message": "identity matches"
+    },
+    {
+      "id": "levin2025",
+      "doi": "10.31234/osf.io/5g2xj_v3",
+      "outcome": "advisory",
+      "compared_fields": {
+        "title": {
+          "reference": "Ingressing minds: Causal patterns beyond genetics and environment in natural, synthetic, and hybrid embodiments",
+          "registry": [
+            "Ingressing Minds: Causal Patterns Beyond Genetics and Environment in Natural, Synthetic, and Hybrid Embodiments"
+          ],
+          "registry_subtitle": [],
+          "similarity": 1.0,
+          "match": true
+        },
+        "author": {
+          "reference": "levin",
+          "registry": "levin",
+          "match": true
+        },
+        "year": {
+          "reference": [
+            2025
+          ],
+          "registry": [
+            2025,
+            2025
+          ],
+          "match": true
+        },
+        "container-title": {
+          "reference": "PsyArXiv",
+          "registry": [],
+          "match": false
+        },
+        "volume": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "issue": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        },
+        "page": {
+          "reference": null,
+          "registry": null,
+          "match": true
+        }
+      },
+      "registry": "Crossref",
+      "fetched_at": "2026-11-25T22:03:32.893699+00:00",
+      "record_sha256": "75adabad1dec6c8708e4cf319ed81e033d5b75b8d44639f42cf536a95aa3bd80",
+      "suggestions": [],
+      "message": "different fields: container-title"
+    }
+  ]
+}

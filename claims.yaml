@@ -1,0 +1,664 @@
+schema: 1
+coverage: pending
+reviewed_manuscript_sha256: null
+claims:
+- id: abs-exhaustive-pairs
+  kind: computation
+  passage: Exhaustive checks over 1,381,440 matrix-graph pairs and 400 seeded trials over $\mathbb{F}_{101}$ agree with these theorems.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /exhaustive_protocol/total_pairs
+    reported: 1,381,440
+    scale: 1
+    decimals: 0
+    units: matrix-graph pairs
+    conditions: 'exhaustive enumeration: all invertible 3x3 matrices over F_2 and F_3 and 4x4 over F_2, all labelled graphs'
+- id: abs-trials
+  kind: computation
+  passage: Exhaustive checks over 1,381,440 matrix-graph pairs and 400 seeded trials over $\mathbb{F}_{101}$ agree with these theorems.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/cases
+    reported: '400'
+    scale: 1
+    decimals: 0
+    units: trials
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: abs-greedy-perm-n6
+  kind: computation
+  passage: 'Moves that depend on the state remove this rigidity at small sizes: every $3\times 3$ matrix over $\mathbb{F}_5$ with nonzero permanent can reach a readable form, while greedy agents with access to every permanent-preserving move complete 94 of 200 random $6\times 6$ matrices over $\mathbb{F}_3$.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n6_p3/completed
+    reported: '94'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, permanent, n=6, p=3, complete graph, budget 3000 contacts
+- id: abs-greedy-trials-n6
+  kind: computation
+  passage: 'Moves that depend on the state remove this rigidity at small sizes: every $3\times 3$ matrix over $\mathbb{F}_5$ with nonzero permanent can reach a readable form, while greedy agents with access to every permanent-preserving move complete 94 of 200 random $6\times 6$ matrices over $\mathbb{F}_3$.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n6_p3/trials
+    reported: '200'
+    scale: 1
+    decimals: 0
+    units: random matrices with nonzero permanent
+    conditions: greedy oracle agents, n=6, p=3
+- id: exh-pairs
+  kind: computation
+  passage: Across 1,381,440 matrix-graph pairs and 4,007,520 nontrivial transitions there were no disagreements with Theorems 1 to 3, no change of determinant, no change of any component's pivot profile, and no error in the readout from summaries.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /exhaustive_protocol/total_pairs
+    reported: 1,381,440
+    scale: 1
+    decimals: 0
+    units: matrix-graph pairs
+    conditions: 'exhaustive enumeration: all invertible 3x3 matrices over F_2 and F_3 and 4x4 over F_2, all labelled graphs'
+- id: exh-transitions
+  kind: computation
+  passage: Across 1,381,440 matrix-graph pairs and 4,007,520 nontrivial transitions there were no disagreements with Theorems 1 to 3, no change of determinant, no change of any component's pivot profile, and no error in the readout from summaries.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /exhaustive_protocol/total_transitions
+    reported: 4,007,520
+    scale: 1
+    decimals: 0
+    units: nontrivial protocol transitions
+    conditions: 'exhaustive enumeration: all invertible 3x3 matrices over F_2 and F_3 and 4x4 over F_2, all labelled graphs'
+- id: rand-feasible
+  kind: computation
+  passage: All 300 cases with $q=0$ reached a readable form, and none of the 100 cases with $q>0$ did; their obstruction indices ranged from 1 to 7 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/predicted_feasible
+    reported: '300'
+    scale: 1
+    decimals: 0
+    units: cases with q=0
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-feasible-completed
+  kind: computation
+  passage: All 300 cases with $q=0$ reached a readable form, and none of the 100 cases with $q>0$ did; their obstruction indices ranged from 1 to 7 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/feasible_completed
+    reported: '300'
+    scale: 1
+    decimals: 0
+    units: cases completed
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-obstructed
+  kind: computation
+  passage: All 300 cases with $q=0$ reached a readable form, and none of the 100 cases with $q>0$ did; their obstruction indices ranged from 1 to 7 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/obstructed
+    reported: '100'
+    scale: 1
+    decimals: 0
+    units: cases with q>0
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-qmin
+  kind: computation
+  passage: All 300 cases with $q=0$ reached a readable form, and none of the 100 cases with $q>0$ did; their obstruction indices ranged from 1 to 7 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/obstructed_q_min
+    reported: '1'
+    scale: 1
+    decimals: 0
+    units: obstruction index
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-qmax
+  kind: computation
+  passage: All 300 cases with $q=0$ reached a readable form, and none of the 100 cases with $q>0$ did; their obstruction indices ranged from 1 to 7 (Figure 1a).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/obstructed_q_max
+    reported: '7'
+    scale: 1
+    decimals: 0
+    units: obstruction index
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-deficit
+  kind: computation
+  passage: In all 400 cases the final number of missing leads equalled the predicted $q$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/final_deficit_equals_q
+    reported: '400'
+    scale: 1
+    decimals: 0
+    units: cases with final deficit equal to q
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-audits
+  kind: computation
+  passage: All 13,955 determinant audits along the trajectories, and every final readout, agreed with the initial determinant.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/det_audits
+    reported: 13,955
+    scale: 1
+    decimals: 0
+    units: determinant audits
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125; audit every 500 contacts and at the end
+- id: rand-slowest
+  kind: computation
+  passage: The slowest completion took 7,603 contacts at $n=16$ against a budget of 204,800.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/slowest_contacts
+    reported: 7,603
+    scale: 1
+    decimals: 0
+    units: contacts
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-slowest-n
+  kind: computation
+  passage: The slowest completion took 7,603 contacts at $n=16$ against a budget of 204,800.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/slowest_n
+    reported: '16'
+    scale: 1
+    decimals: 0
+    units: matrix size
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: rand-slowest-budget
+  kind: computation
+  passage: The slowest completion took 7,603 contacts at $n=16$ against a budget of 204,800.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/slowest_budget
+    reported: 204,800
+    scale: 1
+    decimals: 0
+    units: contact offers
+    conditions: 400 seeded randomised trials over F_101, n in {4,6,8,12,16}, budget 50 n^3 offers, beta 1/2, seed 20261125
+- id: nomob-intact
+  kind: computation
+  passage: 'Without swaps, elimination alone completed all 100 complete-graph cases but only 2 of the 100 damaged connected cases: on a sparse graph, rows with equal leads that are not adjacent never meet.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/no_mobility/intact/completed
+    reported: '100'
+    scale: 1
+    decimals: 0
+    units: cases completed
+    conditions: no-swap control, complete graph, same offers as live run
+- id: nomob-damaged
+  kind: computation
+  passage: 'Without swaps, elimination alone completed all 100 complete-graph cases but only 2 of the 100 damaged connected cases: on a sparse graph, rows with equal leads that are not adjacent never meet.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/no_mobility/damaged_connected/completed
+    reported: '2'
+    scale: 1
+    decimals: 0
+    units: cases completed
+    conditions: no-swap control, damaged connected graphs
+- id: nomob-damaged-cases
+  kind: computation
+  passage: 'Without swaps, elimination alone completed all 100 complete-graph cases but only 2 of the 100 damaged connected cases: on a sparse graph, rows with equal leads that are not adjacent never meet.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /randomized/no_mobility/damaged_connected/cases
+    reported: '100'
+    scale: 1
+    decimals: 0
+    units: cases
+    conditions: no-swap control, damaged connected graphs
+- id: lp-det-n3p3
+  kind: computation
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/det_n3_p3/count
+    reported: '24'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, det, n=3, p=3
+- id: lp-perm-n3p3
+  kind: computation
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/perm_n3_p3/count
+    reported: '4'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, perm, n=3, p=3
+- id: lp-det-n3p5
+  kind: computation
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/det_n3_p5/count
+    reported: '120'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, det, n=3, p=5
+- id: lp-perm-n3p5
+  kind: computation
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/perm_n3_p5/count
+    reported: '8'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, perm, n=3, p=5
+- id: lp-det-n4p3
+  kind: computation
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/det_n4_p3/count
+    reported: '24'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, det, n=4, p=3
+- id: lp-perm-n4p3
+  kind: computation
+  passage: For $n=3$ over $\mathbb{F}_3$ it found 24 determinant preservers and 4 permanent preservers; over $\mathbb{F}_5$, 120 and 8; for $n=4$ over $\mathbb{F}_3$, again 24 and 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/perm_n4_p3/count
+    reported: '4'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, perm, n=4, p=3
+- id: lp-f2
+  kind: computation
+  passage: Over $\mathbb{F}_2$ both searches found the 6 elements of $\mathrm{SL}_2(\mathbb{F}_2)$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/perm_n3_p2/count
+    reported: '6'
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, det and perm, n=3 and n=4, p=2
+- id: lp-n2
+  kind: computation
+  passage: For $n=2$ over $\mathbb{F}_3$ the search found 1,152 determinant preservers, because when the pair is the whole matrix column operations are also local; this is why the theorem needs $n\ge 3$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /linear_preservers/det_n2_p3/count
+    reported: 1,152
+    scale: 1
+    decimals: 0
+    units: linear maps
+    conditions: exhaustive backtracking over images of basis vectors, det, n=2, p=3
+- id: reach-perm-n3
+  kind: computation
+  passage: At $n=3$ no independent pair is frozen, and the exhaustive reachability computation over all $3\times 3$ matrices over $\mathbb{F}_5$ found that every one of the 1,513,600 matrices with nonzero permanent can reach a readable form through permanent-preserving pair moves, on the complete graph and on the path alike, with the matrices of each permanent value forming a single class.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /reach_n3/p5_complete/perm/can_reach_readable
+    reported: 1,513,600
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: exhaustive, all 3x3 matrices over F_5, complete graph; path graph gives the same count
+- id: reach-perm-n3-path
+  kind: computation
+  passage: At $n=3$ no independent pair is frozen, and the exhaustive reachability computation over all $3\times 3$ matrices over $\mathbb{F}_5$ found that every one of the 1,513,600 matrices with nonzero permanent can reach a readable form through permanent-preserving pair moves, on the complete graph and on the path alike, with the matrices of each permanent value forming a single class.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /reach_n3/p5_path/perm/nonzero_value
+    reported: 1,513,600
+    scale: 1
+    decimals: 0
+    units: matrices with nonzero permanent
+    conditions: exhaustive, all 3x3 matrices over F_5, path graph
+- id: reach-perm-n3-readable
+  kind: computation
+  passage: Only 48,000 of them are readable to begin with, which is what linear moves can exploit.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /reach_n3/p5_complete/perm/already_readable
+    reported: 48,000
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: exhaustive, all 3x3 matrices over F_5 with nonzero permanent
+- id: frozen-pairs
+  kind: computation
+  passage: At $n=5$ over $\mathbb{F}_5$, 6,328,320 of the 9,746,880 independent pairs are frozen, and 458 of 20,000 uniformly random matrices have all ten row pairs frozen.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /fibres/n5_p5/perm_fibre_equals_orbit_independent
+    reported: 6,328,320
+    scale: 1
+    decimals: 0
+    units: independent pairs
+    conditions: exhaustive over all pairs in F_5^5 x F_5^5
+- id: frozen-pairs-total
+  kind: computation
+  passage: At $n=5$ over $\mathbb{F}_5$, 6,328,320 of the 9,746,880 independent pairs are frozen, and 458 of 20,000 uniformly random matrices have all ten row pairs frozen.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /fibres/n5_p5/independent_pairs
+    reported: 9,746,880
+    scale: 1
+    decimals: 0
+    units: independent pairs
+    conditions: exhaustive over all pairs in F_5^5 x F_5^5
+- id: frozen-matrices
+  kind: computation
+  passage: At $n=5$ over $\mathbb{F}_5$, 6,328,320 of the 9,746,880 independent pairs are frozen, and 458 of 20,000 uniformly random matrices have all ten row pairs frozen.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /frozen/n5_p5/frozen
+    reported: '458'
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: 20,000 uniform random 5x5 matrices over F_5, seed 7
+- id: frozen-samples
+  kind: computation
+  passage: At $n=5$ over $\mathbb{F}_5$, 6,328,320 of the 9,746,880 independent pairs are frozen, and 458 of 20,000 uniformly random matrices have all ten row pairs frozen.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /frozen/n5_p5/samples
+    reported: 20,000
+    scale: 1
+    decimals: 0
+    units: matrices
+    conditions: seed 7
+- id: greedy-det
+  kind: computation
+  passage: For the determinant this reproduces elimination, and these agents completed all 200 random matrices in every setting tested.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/det_n6_p3/completed
+    reported: '200'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, determinant, every tested (n,p); n=6, p=3 shown
+- id: greedy-perm-n3
+  kind: computation
+  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n3_p5/completed
+    reported: '200'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=3, p=5
+- id: greedy-perm-n4
+  kind: computation
+  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n4_p5/completed
+    reported: '200'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=4, p=5
+- id: greedy-perm-n5p5
+  kind: computation
+  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n5_p5/completed
+    reported: '118'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=5, p=5
+- id: greedy-perm-n5p3
+  kind: computation
+  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n5_p3/completed
+    reported: '162'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=5, p=3
+- id: greedy-perm-n6p3
+  kind: computation
+  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n6_p3/completed
+    reported: '94'
+    scale: 1
+    decimals: 0
+    units: matrices completed
+    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent, n=6, p=3
+- id: greedy-budget
+  kind: computation
+  passage: For the permanent they completed all 200 at $n=3$ and $n=4$ over $\mathbb{F}_5$, but 118 of 200 at $n=5$ over $\mathbb{F}_5$, 162 of 200 at $n=5$ over $\mathbb{F}_3$, and 94 of 200 at $n=6$ over $\mathbb{F}_3$, each with a budget of 3,000 contacts (Figure 1d).
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /greedy/perm_n6_p3/budget
+    reported: 3,000
+    scale: 1
+    decimals: 0
+    units: contacts
+    conditions: greedy oracle agents, permanent, complete graph, budget 3000 contacts, 200 random matrices with nonzero permanent
+- id: sign-det
+  kind: computation
+  passage: For $n=3,\dots,7$ the admissible sets of the computation were exactly the cuts; at $n=7$, 64 of the 2,097,152 rules give a signed determinant and another 64 a signed permanent.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /sign_census/n7/det_type
+    reported: '64'
+    scale: 1
+    decimals: 0
+    units: sign rules
+    conditions: GF(2) census, n=7
+- id: sign-graphs
+  kind: computation
+  passage: For $n=3,\dots,7$ the admissible sets of the computation were exactly the cuts; at $n=7$, 64 of the 2,097,152 rules give a signed determinant and another 64 a signed permanent.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /sign_census/n7/graphs
+    reported: 2,097,152
+    scale: 1
+    decimals: 0
+    units: sign rules
+    conditions: all subsets of pairs, n=7
+- id: sign-perm
+  kind: computation
+  passage: For $n=3,\dots,7$ the admissible sets of the computation were exactly the cuts; at $n=7$, 64 of the 2,097,152 rules give a signed determinant and another 64 a signed permanent.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /sign_census/n7/perm_type
+    reported: '64'
+    scale: 1
+    decimals: 0
+    units: sign rules
+    conditions: GF(2) census, n=7
+- id: clique-checks
+  kind: computation
+  passage: All 20 numerical checks of this identity, at $n=6$ and $n=7$, passed.
+  evidence:
+    file: simulation/output/results.json
+    run_id: main
+    pointer: /clique_projection/passed
+    reported: '20'
+    scale: 1
+    decimals: 0
+    units: checks passed
+    conditions: random integer matrices, n=6 and n=7
+- id: def-readable
+  kind: definition
+  passage: A matrix is readable when its rows have pairwise distinct leads.
+  rationale: Target state for collective computation; the readout identity follows from triangularity.
+- id: def-profile
+  kind: definition
+  passage: For a subspace $W\subseteq\mathbb{F}^n$, its pivot profile $P(W)$ is the set of leads of its nonzero vectors.
+  rationale: Standard echelon-form notion; used to state the obstruction index.
+- id: def-q
+  kind: definition
+  passage: Because the rows are independent, $\sum_C|P_C|=n$, so $q=0$ exactly when the profiles of the components are pairwise disjoint.
+  rationale: Defines when q vanishes; follows from |P(W)| = dim W.
+- id: thm-orbits
+  kind: interpretation
+  passage: '**Theorem 1 (orbits).** Let $\Gamma_G$ be the group generated by all pair moves $(r_i,r_j)\mapsto(ar_i+br_j,\,cr_i+dr_j)$ with $ad-bc=1$ along edges of $G$.'
+  rationale: Proved in the text from the commutator relation for transvections; checked by union-find orbits in the exhaustive enumeration.
+- id: thm-readability
+  kind: interpretation
+  passage: '**Theorem 2 (readability).** The orbit $\Gamma_G A$ contains a readable matrix if and only if $q(A,G)=0$.'
+  rationale: Proved in the text; checked exhaustively on small cases.
+- id: thm-protocol
+  kind: interpretation
+  passage: '**Theorem 3 (the protocol).** Suppose the graph is fixed, each edge is offered for contact at each step with probability at least $p_{\min}>0$ independently of the past, and $0<\beta\le 1$.'
+  rationale: Proved in the text by a bounded potential and a positive-probability routing event; checked exhaustively and in seeded trials.
+- id: assume-protocol
+  kind: assumption
+  passage: The protocol assumes atomic, exact pair updates on a fixed graph.
+  rationale: The proof uses atomicity, exact arithmetic and a fixed graph with positive edge-offer probabilities; other regimes are not covered.
+- id: thm-local
+  kind: interpretation
+  passage: '**Theorem 4 (pair-local linear preservers).** Let $\mathbb{F}$ have characteristic other than two, let $n\ge 3$, and let $\Phi$ be a linear map of pairs of rows.'
+  rationale: Proved in the text via Laplace expansion and a rank-four argument; exhaustively confirmed for small n and p.
+- id: cor-monomial
+  kind: interpretation
+  passage: '**Corollary 5.** On a connected graph, linear permanent-preserving pair moves generate exactly the maps $A\mapsto PDA$ with $P$ a permutation matrix and $D$ diagonal with $\det D=1$.'
+  rationale: Follows from Theorem 4 and generation of permutations and determinant-one diagonals along a connected graph.
+- id: interp-statedep
+  kind: interpretation
+  passage: At $n=3$ the permanent's local rigidity is therefore a property of fixed linear moves and disappears once moves may depend on the state.
+  rationale: Exhaustive n=3 reachability shows state-dependent permanent-preserving moves connect every matrix of each nonzero permanent value.
+- id: interp-dimension
+  kind: assumption
+  passage: A dimension count suggests that frozen pairs become generic for $n\ge 5$ over large fields, because the $n(n-1)/2$ constraints on the $2n$ coordinates of the replacement then outnumber the free parameters left after the one-dimensional torus; this was not proved.
+  rationale: Heuristic parameter count; explicitly not proved.
+- id: prop-sign
+  kind: interpretation
+  passage: '**Proposition 6.** $D_E$ equals the determinant after a change of signs of matrix entries (and a global sign) if and only if $E$ is a cut of the complete graph, $E=\{\{i,j\}: i\in S,\ j\notin S\}$ for some $S$.'
+  rationale: Proved in the text; GF(2) census confirms it for n from 3 to 7.
+- id: interp-free-lunch
+  kind: interpretation
+  passage: In that sense the determinant's local capacity is a consequence of its symmetry group, and the permanent lacks the corresponding local moves.
+  rationale: Summary of Theorems 1 to 4 at the scale they support.
+- id: interp-vp
+  kind: interpretation
+  passage: None of this bears directly on VP versus VNP, which remains open.
+  rationale: Value-preserving moves are not required of permanent algorithms, so their absence is not a lower bound.
+- id: interp-scope
+  kind: interpretation
+  passage: The experiments establish this for one designed protocol, a family of greedy policies and small fields.
+  rationale: Restates the scope of the computational evidence.
+- id: src-zhang
+  kind: source
+  passage: Zhang, Goldstein and Levin implemented classical sorting algorithms as distributed policies executed by each array element, introduced "frozen" elements that fail to move when the policy says they should, and reported that the distributed versions tolerated these faults better than the traditional versions and showed behaviour not explicitly encoded in the algorithm, such as temporarily moving away from sortedness [@zhang2024].
+  evidence:
+    citation_id: zhang2024
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: Read the version-of-record abstract (OpenAlex record for DOI 10.1177/10597123241269740) and the arXiv preprint 2401.05375v1 (Definitions of Terms table; Error tolerance and Delayed Gratification sections). The Sage PDF was not retrievable.
+- id: src-levin
+  kind: source
+  passage: 'Levin interprets capacities of this kind as a "free lunch": once a system has the right physical interface, mathematical facts supply features that did not have to be built separately, a view he connects to a latent space of patterns [@levin2025, p.'
+  evidence:
+    citation_id: levin2025
+    locator: Section 4, p. 16
+    depth: fulltext
+    verified: false
+    verification_note: Read the PsyArXiv version 3 PDF (OSF file 7k32r). The free-lunch passage is in Section 4; the latent space of patterns is in the abstract.
+    quote: These kinds of features show up as a kind of “free lunch” in the physicist’s sense – with the right kind of pointer (or interface, or receiver) in physical space, one gets more out than one put in.
+- id: src-dijkstra
+  kind: source
+  passage: 'Distributed computing has studied systems in which local steps maintain a global property: Dijkstra''s self-stabilising systems keep the relation "the system is in a legitimate state" invariant under the steps of loosely coupled processes [@dijkstra1974]; gossip algorithms compute averages through random pairwise exchanges [@boyd2006]; algebraic gossip spreads messages through random linear coding over finite fields [@deb2006]; population protocols characterise what pairwise interactions of finite-state agents can compute [@angluin2006]; and generic pairwise elimination has been parallelised with attention to communication cost [@tiskin2007].'
+  evidence:
+    citation_id: dijkstra1974
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: 'Read the ACM abstract: keeping the relation that the system is in a legitimate state invariant.'
+- id: src-mulmuley
+  kind: source
+  passage: 'Algebraic complexity theory separates the determinant, computable by polynomial-size circuits, from the permanent, which is complete for Valiant''s class VNP in characteristic other than two [@valiant1979classes; @burgisser2000]; computing the permanent of a 0-1 matrix is #P-complete [@valiant1979permanent].'
+  evidence:
+    citation_id: mulmuley2001
+    locator: Abstract
+    depth: abstract
+    verified: false
+    verification_note: 'Read the SIAM abstract via OpenAlex: lower-bound problems reduced to problems about orbits of partially stable points in reductive-group representations.'
+- id: src-szego
+  kind: source
+  passage: Pólya asked in 1913 when signs can be attached to the entries of a matrix so that its permanent becomes the determinant of the signed matrix, and Szegő showed that for every $n\ge 3$ some $n\times n$ matrix admits no such signs [@mccuaig2004, p.
+  evidence:
+    citation_id: mccuaig2004
+    locator: p. 11
+    depth: fulltext
+    verified: false
+    verification_note: Read the open-access EJC PDF; page 11 states Pólya's question and Szegő's result for n at least 3, citing Pólya (1913) and Szegő (1913).
+    quote: It was soon discovered by Szegö [43] that for every n ≥ 3, Pólya’s method does not work for some n×n matrix.
+- id: src-vy-little
+  kind: source
+  passage: Vazirani and Yannakakis showed that a 0-1 matrix admits such signs exactly when its bipartite graph has a Pfaffian orientation, a notion due to Kasteleyn [@vazirani1989; @kasteleyn1963]; Little characterised these graphs by excluded $K_{3,3}$ configurations [@little1975]; and Robertson, Seymour and Thomas, and McCuaig, gave structural characterisations that yield polynomial-time recognition [@robertson1999; @mccuaig2004].
+  evidence:
+    citation_id: robertson1999
+    locator: Section 1, statements 1.1 and 1.2
+    depth: fulltext
+    verified: false
+    verification_note: 'Read the arXiv version math/9911268 of the Annals paper: statement 1.1 (Vazirani and Yannakakis, Pólya matrix iff Pfaffian orientation) and 1.2 (Little, no K3,3), and the abstract on the polynomial-time algorithm. McCuaig''s abstract states structural characterisations implying polynomial algorithms.'
+runs:
+- id: main
+  required: true
+  record: verification/main.json
